@@ -441,6 +441,63 @@ def plate_detect(img: np.ndarray, method: str = 'YOLOv8') -> Tuple[np.ndarray, n
     return plate_detect_haar(img)
 
 ###############################################################################
+# СЕГМЕНТАЦИЯ, ПРЕ‑/ПОСТОБРАБОТКА ДЛЯ CNN
+###############################################################################
+
+def segment_characters(image: np.ndarray) -> np.ndarray:
+    """Разбиваем номер на отдельные символы."""
+    if image is None:
+        return np.array([])
+    img_lp = cv2.resize(image, (333, 75))
+    img_gray = cv2.cvtColor(img_lp, cv2.COLOR_BGR2GRAY)
+    img_bin = cv2.adaptiveThreshold(img_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                    cv2.THRESH_BINARY, 11, 2)
+    img_bin = cv2.morphologyEx(img_bin, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2)))
+    img_bin[0:3, :], img_bin[:, 0:3], img_bin[72:75, :], img_bin[:, 330:333] = 255, 255, 255, 255
+
+    LP_W, LP_H = img_bin.shape
+    dims = [LP_W / 6, LP_W / 2, LP_H / 10, 2 * LP_H / 3]
+    lower_h, upper_h, lower_w, upper_w = dims[0] * 0.5, dims[1] * 1.2, dims[2] * 0.5, dims[3] * 1.2
+
+    cntrs, hier = cv2.findContours(img_bin.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+    if hier is None:
+        return np.array([])
+
+    x_list, chars = [], []
+    for i, c in enumerate(cntrs):
+        if hier[0][i][3] != -1:
+            x, y, w, h = cv2.boundingRect(c)
+            ar = w / h
+            if lower_h < h < upper_h and lower_w < w < upper_w and 0.3 < ar < 1.2:
+                x_list.append(x)
+                char = cv2.subtract(255, cv2.resize(img_bin[y:y+h, x:x+w], (20, 40)))
+                char_copy = np.zeros((44, 24))
+                char_copy[2:42, 2:22] = char
+                chars.append(char_copy)
+
+    idx_sorted = np.argsort(x_list)
+    return np.array([chars[i] for i in idx_sorted]) if chars else np.array([])
+
+
+def fix_dimension(img):
+    return np.stack((img,)*3, axis=-1) if img.ndim == 2 else img
+
+
+def recognize_number_cnn(img_plate: np.ndarray, model, conf_thr: float = 0.0):
+    seg_chars = segment_characters(img_plate)
+    if seg_chars.size == 0:
+        return None, []
+    output, confs = [], []
+    for ch in seg_chars:
+        img = fix_dimension(cv2.resize(ch, (28, 28))) / 255.0
+        pred = model.predict(img.reshape(1, 28, 28, 3), verbose=0)
+        idx = int(np.argmax(pred))
+        conf = float(pred[0, idx])
+        output.append(num_to_char[idx] if conf >= conf_thr else '?')
+        confs.append(conf)
+    return ''.join(output), confs
+
+###############################################################################
 # ОСНОВНОЕ ПРИЛОЖЕНИЕ (STREAMLIT)
 ###############################################################################
 def main():
