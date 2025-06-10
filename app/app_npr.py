@@ -332,50 +332,36 @@ def segment_characters(image):
 
     return np.array(img_res_copy)
 
-###############################################################################
-# ПРИВЕДЕНИЕ К RGB, ЕСЛИ СЕРЫЙ
-###############################################################################
-def fix_dimension(img):
-    if len(img.shape) == 2:
-        img = np.stack((img,)*3, axis=-1)
-    return img
+def recognize_color_gpt4(img_bgr, max_size: int = 224, quality: int = 30) -> str:
+    """GPT‑4o: распознаём цвет автомобиля."""
+    default_color = "Не удалось распознать цвет"
+    h, w = img_bgr.shape[:2]
+    scale = max_size / float(max(h, w))
+    if scale < 1.0:
+        img_bgr = cv2.resize(img_bgr, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_AREA)
 
-###############################################################################
-# РАСПОЗНАВАНИЕ НОМЕРА (CNN)
-###############################################################################
-def recognize_number_cnn(img_plate, model, confidence_threshold=0.0):
-    """
-    Возвращает:
-      (plate_number, list_of_confidences)
-    где list_of_confidences — массив float для каждого символа.
-    """
-    segmented_chars = segment_characters(img_plate)
-    if len(segmented_chars) == 0:
-        return None, []
+    success, encoded_img = cv2.imencode(".jpg", img_bgr, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
+    if not success:
+        return default_color
 
-    output_chars = []
-    confs = []
+    img_base64 = base64.b64encode(encoded_img).decode()
+    system_msg = "Ты — помощник, распознающий основной цвет автомобиля на изображении."
+    user_msg = [
+        {"type": "input_text", "text": "Определите основной цвет автомобиля на этом изображении."},
+        {"type": "input_image", "image_url": f"data:image/jpeg;base64,{img_base64}"}
+    ]
+    messages = [
+        {"role": "system", "content": system_msg},
+        {"role": "user", "content": user_msg}
+    ]
 
-    for ch in segmented_chars:
-        img_ = cv2.resize(ch, (28, 28), interpolation=cv2.INTER_AREA)
-        img_ = fix_dimension(img_)
-        img_ = img_ / 255.0
-        img_ = img_.reshape(1, 28, 28, 3)
-
-        pred = model.predict(img_, verbose=0)
-        y_ = np.argmax(pred, axis=1)[0]
-        confidence = float(np.max(pred))  # Максимальная вероятность
-        character = num_to_char[y_]
-
-        # Если уверенность ниже порога, ставим '?' 
-        if confidence < confidence_threshold:
-            character = "?"
-
-        output_chars.append(character)
-        confs.append(confidence)
-
-    plate_number = ''.join(output_chars)
-    return plate_number, confs
+    try:
+        response = safe_chat_completion(messages)
+        if hasattr(response, 'output') and response.output:
+            return response.output[0].content[0].text.strip()
+    except Exception as e:
+        logging.error(f"[GPT‑4o color] {e}")
+    return default_color
 
 ###############################################################################
 # ИСПРАВЛЕНИЕ ФОРМАТА ДЛЯ НОВЫХ РФ НОМЕРОВ
