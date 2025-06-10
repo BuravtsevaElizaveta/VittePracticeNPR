@@ -930,3 +930,45 @@ else:
                 st.subheader("Определение цвета…")
                 color = recognize_color_gpt4(img_bgr)
                 progress.progress(50)
+
+# Доп. анализ (регион, год)
+        region_name = year_issued = ""
+        if plate_number and number_format in ['Старые РФ номера', 'Новые РФ номера']:
+            st.subheader("Дополнительный анализ номера (регион, год выдачи)…")
+            region_name, year_issued = analyze_russian_number_gpt(plate_number)
+        progress.progress(100)
+
+        st.success(f"Обработка завершена за {time.time() - start_time:.2f} сек.")
+
+        # ‑‑‑ Итог
+        st.header("Результаты анализа")
+        if plate_number:
+            st.write(f"**Номер**: {plate_number}")
+            if region_name:
+                st.write(f"**Регион**: {region_name}")
+            if year_issued:
+                st.write(f"**Год выдачи**: {year_issued}")
+            add_stat_item(plate_number, region_name, year_issued)
+            if confs:
+                avg_conf = sum(confs) / len(confs)
+                st.write(f"Средняя уверенность (CNN): {avg_conf:.2f}")
+                if len(plate_number) == len(confs):
+                    st.bar_chart(pd.DataFrame({"Символ": list(plate_number), "Уверенность": confs}), x="Символ", y="Уверенность")
+                else:
+                    st.warning("Длина номера не совпадает с количеством конфиденсов – проверьте сегментацию.")
+        if brand:
+            st.write(f"**Марка**: {brand}")
+        if car_type:
+            st.write(f"**Тип**: {car_type}")
+        if color:
+            st.write(f"**Цвет**: {color}")
+
+        # ‑‑‑ Экспорт
+        st.subheader("Выгрузить результат в JSON/XML")
+        res_json = generate_json_result(plate_number, brand, car_type, color)
+        st.download_button("Скачать JSON", res_json.encode(), file_name="result.json", mime="application/json")
+        res_xml = generate_xml_result(plate_number, brand, car_type, color)
+        st.download_button("Скачать XML", res_xml.encode(), file_name="result.xml", mime="application/xml")
+
+    elif analyze_button and not uploaded_file:
+        st.warning("Сначала загрузите изображение.")
