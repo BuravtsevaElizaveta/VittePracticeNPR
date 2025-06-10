@@ -102,12 +102,11 @@ proxy_base_url = "https://api.proxyapi.ru/openai/v1"
 client = openai.OpenAI(api_key=proxy_api_key, base_url=proxy_base_url)
 
 ###############################################################################
-# ФУНКЦИИ ДЛЯ GPT-4o (через Proxy API)
+# ФУНКЦИИ ДЛЯ GPT‑4o (через Proxy API)
 ###############################################################################
-def safe_chat_completion(messages, model="gpt-4o", temperature=0.0, max_retries=5):
-    """
-    Запрос к GPT-4o с повторными попытками. Логируем ошибки и делаем бэкофф.
-    """
+
+def safe_chat_completion(messages, model="gpt-4o", temperature: float = 0.0, max_retries: int = 5):
+    """Запрос к GPT‑4o с повторными попытками."""
     delay = 1.0
     for attempt in range(max_retries):
         try:
@@ -119,10 +118,11 @@ def safe_chat_completion(messages, model="gpt-4o", temperature=0.0, max_retries=
             )
             return response
         except Exception as e:
-            logging.error(f"[GPT-4o Error]: {e}. Retrying in {delay}s")
+            logging.error(f"[GPT‑4o Error]: {e}. Retrying in {delay}s")
             time.sleep(delay)
             delay *= 2
-    raise Exception("[GPT-4o] Max retries reached in safe_chat_completion")
+    raise Exception("[GPT‑4o] Max retries reached in safe_chat_completion")
+
 
 ###############################################################################
 # ЗАГРУЗКА МОДЕЛИ CNN
