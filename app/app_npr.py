@@ -155,26 +155,22 @@ def load_model_cnn():
 model_cnn = load_model_cnn()
 
 ###############################################################################
-# GPT-4: Распознавание марки
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 ###############################################################################
-def recognize_brand_gpt4(img_bgr, max_size=224, quality=30):
-    """
-    С помощью GPT-4o определяем марку автомобиля.
-    """
+
+def recognize_brand_gpt4(img_bgr, max_size: int = 224, quality: int = 30) -> str:
+    """GPT‑4o: распознаём марку автомобиля."""
     default_brand = "Не удалось распознать марку"
     h, w = img_bgr.shape[:2]
     scale = max_size / float(max(h, w))
     if scale < 1.0:
-        new_w = int(w * scale)
-        new_h = int(h * scale)
-        img_bgr = cv2.resize(img_bgr, (new_w, new_h), interpolation=cv2.INTER_AREA)
+        img_bgr = cv2.resize(img_bgr, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_AREA)
 
-    encode_params = [int(cv2.IMWRITE_JPEG_QUALITY), quality]
-    success, encoded_img = cv2.imencode(".jpg", img_bgr, encode_params)
+    success, encoded_img = cv2.imencode(".jpg", img_bgr, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
     if not success:
         return default_brand
 
-    img_base64 = base64.b64encode(encoded_img).decode("utf-8")
+    img_base64 = base64.b64encode(encoded_img).decode()
     system_msg = "Ты — помощник, распознающий марку машины на изображении. Верни только марку без дополнительной информации."
     user_msg = [
         {"type": "input_text", "text": "Определите марку автомобиля на этом изображении."},
@@ -186,92 +182,12 @@ def recognize_brand_gpt4(img_bgr, max_size=224, quality=30):
     ]
 
     try:
-        response = safe_chat_completion(messages, model="gpt-4o", temperature=0.0)
-        if hasattr(response, 'output') and len(response.output) > 0:
-            brand = response.output[0].content[0].text.strip()
-            return brand
-        else:
-            return default_brand
+        response = safe_chat_completion(messages)
+        if hasattr(response, 'output') and response.output:
+            return response.output[0].content[0].text.strip()
     except Exception as e:
-        logging.error(f"[GPT-4o Error]: {e}")
-        return default_brand
-
-###############################################################################
-# GPT-4: Распознавание цвета
-###############################################################################
-def recognize_color_gpt4(img_bgr, max_size=224, quality=30):
-    """
-    С помощью GPT-4o определяем основной цвет автомобиля.
-    """
-    default_color = "Не удалось распознать цвет"
-    h, w = img_bgr.shape[:2]
-    scale = max_size / float(max(h, w))
-    if scale < 1.0:
-        new_w = int(w * scale)
-        new_h = int(h * scale)
-        img_bgr = cv2.resize(img_bgr, (new_w, new_h), interpolation=cv2.INTER_AREA)
-
-    encode_params = [int(cv2.IMWRITE_JPEG_QUALITY), quality]
-    success, encoded_img = cv2.imencode(".jpg", img_bgr, encode_params)
-    if not success:
-        return default_color
-
-    img_base64 = base64.b64encode(encoded_img).decode("utf-8")
-    system_msg = "Ты — помощник, распознающий основной цвет автомобиля на изображении."
-    user_msg = [
-        {"type": "input_text", "text": "Определите основной цвет автомобиля на этом изображении."},
-        {"type": "input_image", "image_url": f"data:image/jpeg;base64,{img_base64}"}
-    ]
-    messages = [
-        {"role": "system", "content": system_msg},
-        {"role": "user", "content": user_msg}
-    ]
-
-    try:
-        response = safe_chat_completion(messages, model="gpt-4o", temperature=0.0)
-        if hasattr(response, 'output') and len(response.output) > 0:
-            color = response.output[0].content[0].text.strip()
-            return color
-        else:
-            return default_color
-    except Exception as e:
-        logging.error(f"[GPT-4o Error]: {e}")
-        return default_color
-
-###############################################################################
-# GPT-4: Классификация типа
-###############################################################################
-def classify_car_type(img_bgr):
-    """
-    С помощью GPT-4o определяем тип ТС (легковой, грузовой, автобус, мотоцикл).
-    """
-    default_type = "Не удалось классифицировать тип автомобиля"
-    system_msg = "Ты — помощник, классифицирующий тип автомобиля на изображении. Классифицируй его как: легковой, грузовой, автобус, мотоцикл."
-    encode_params = [int(cv2.IMWRITE_JPEG_QUALITY), 30]
-    success, encoded_img = cv2.imencode(".jpg", img_bgr, encode_params)
-    if not success:
-        return default_type
-
-    img_base64 = base64.b64encode(encoded_img).decode("utf-8")
-    user_msg = [
-        {"type": "input_text", "text": "Определите тип этого транспортного средства."},
-        {"type": "input_image", "image_url": f"data:image/jpeg;base64,{img_base64}"}
-    ]
-    messages = [
-        {"role": "system", "content": system_msg},
-        {"role": "user", "content": user_msg}
-    ]
-
-    try:
-        response = safe_chat_completion(messages, model="gpt-4o", temperature=0.0)
-        if hasattr(response, 'output') and len(response.output) > 0:
-            car_type = response.output[0].content[0].text.strip()
-            return car_type
-        else:
-            return default_type
-    except Exception as e:
-        logging.error(f"[GPT-4o Error]: {e}")
-        return default_type
+        logging.error(f"[GPT‑4o brand] {e}")
+    return default_brand
 
 ###############################################################################
 # GPT-4: АНАЛИЗ РОССИЙСКОГО НОМЕРА (регион, год)
