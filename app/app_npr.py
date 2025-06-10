@@ -14,15 +14,13 @@ AI‑Автоанализатор (Streamlit)
   4. Старый plate_detect переименован в plate_detect_haar для совместимости.
 """
 
-# Импорт для запуска в bare-mode
+###############################################################################
+# ИМПОРТЫ
+###############################################################################
 from streamlit.web import cli as stcli
 import sys
 from streamlit import runtime
 
-# Проверяем наличие runtime
-runtime.exists()
-
-# -*- coding: utf-8 -*-
 import os
 import time
 import logging
@@ -31,10 +29,14 @@ import json
 import re
 import base64
 import xml.etree.ElementTree as ET
+from pathlib import Path
+from typing import Tuple, List
+
 import numpy as np
 import pandas as pd
 import streamlit as st
 import cv2
+from ultralytics import YOLO   # <‑‑‑ новое
 import tensorflow as tf
 from PIL import Image
 import openai
