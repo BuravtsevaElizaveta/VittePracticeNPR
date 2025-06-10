@@ -85,21 +85,20 @@ logging.basicConfig(
 )
 
 ###############################################################################
-# ПАРАМЕТРЫ
+# ЛОГИРОВАНИЕ
+###############################################################################
+logging.basicConfig(
+    filename='app.log',
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
+###############################################################################
+# OPENAI (через Proxy)
 ###############################################################################
 proxy_api_key = "sk-2uHtBOkjr3ZrCn43aUt4WdEZ20JaXu49"
 proxy_base_url = "https://api.proxyapi.ru/openai/v1"
-
-MODEL_PATH = "model.h5"
-CASCADE_PATH = "haarcascade_licence_plate_rus_16stages.xml"
-
-# Разрешённые символы для модели CNN (пример)
-characters = '0123456789АВЕКМНОРСТУХ'
-num_to_char = {i: ch for i, ch in enumerate(characters)}
-
-###############################################################################
-# ИНИЦИАЛИЗАЦИЯ OPENAI (Proxy)
-###############################################################################
 client = openai.OpenAI(api_key=proxy_api_key, base_url=proxy_base_url)
 
 ###############################################################################
