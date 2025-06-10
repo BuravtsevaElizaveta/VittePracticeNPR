@@ -402,6 +402,44 @@ def add_stat_item(plate_number, region, year_issued):
         "year_issued": year_issued
     })
 
+
+###############################################################################
+# ОБНАРУЖЕНИЕ НОМЕРНОГО ЗНАКА
+###############################################################################
+
+def plate_detect_haar(img: np.ndarray):
+    """Старый метод: Haar Cascade."""
+    plateCascade = cv2.CascadeClassifier(str(CASCADE_PATH))
+    plateImg, roi = img.copy(), img.copy()
+    plate_part = None
+    for (x, y, w, h) in plateCascade.detectMultiScale(plateImg, scaleFactor=1.1, minNeighbors=5):
+        plate_part = roi[y:y+h, x:x+w]
+        cv2.rectangle(plateImg, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        break  # используем первый найденный
+    return plateImg, plate_part
+
+
+def plate_detect(img: np.ndarray, method: str = 'YOLOv8') -> Tuple[np.ndarray, np.ndarray]:
+    """Объединённая функция: YOLOv8 (по умолчанию) с фолбэком на Haar."""
+    if method == 'YOLOv8' and yolo_model is not None:
+        try:
+            results = yolo_model.predict(img, verbose=False, device='cpu')
+            for r in results:
+                if r.boxes:  # >= 1 объект
+                    # Берём первый бокс (предполагаем «license_plate» один‑класс)
+                    b = r.boxes[0].xyxy[0].cpu().numpy().astype(int).tolist()
+                    x1, y1, x2, y2 = b
+                    plate_part = img[y1:y2, x1:x2]
+                    plateImg = img.copy()
+                    cv2.rectangle(plateImg, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                    return plateImg, plate_part
+        except Exception as e:
+            logging.error(f"YOLOv8 detect failed: {e}")
+            # переходим к Haar
+
+    # Fallback: Haar Cascade
+    return plate_detect_haar(img)
+
 ###############################################################################
 # ОСНОВНОЕ ПРИЛОЖЕНИЕ (STREAMLIT)
 ###############################################################################
