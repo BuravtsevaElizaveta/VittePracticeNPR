@@ -972,3 +972,22 @@ else:
 
     elif analyze_button and not uploaded_file:
         st.warning("Сначала загрузите изображение.")
+
+# ‑‑‑ Статистика
+    st.write("---")
+    st.header("Статистика распознанных номеров (РФ)")
+    if st.session_state['stat_items']:
+        st.dataframe(pd.DataFrame(st.session_state['stat_items']))
+    else:
+        st.write("Пока нет записей в статистике.")
+
+###############################################################################
+# Точка входа
+###############################################################################
+if __name__ == '__main__':
+    if runtime.exists():
+        main()
+    else:
+        sys.argv = ["streamlit", "run", sys.argv[0]]
+        sys.exit(stcli.main())
+
