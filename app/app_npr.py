@@ -879,3 +879,14 @@ analyze_button = st.button("Анализировать")
             st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
         else:
             st.warning("Не выбран файл для импорта.")
+
+ # ‑‑‑ Анализ изображения
+    if analyze_button and uploaded_file:
+        start_time = time.time()
+        progress = st.progress(0)
+
+        pil_img = Image.open(uploaded_file)
+        img_bgr = np.array(pil_img.convert("RGB"))[:, :, ::-1]
+
+        plate_number = brand = car_type = color = None
+        confs: List[float] = []
