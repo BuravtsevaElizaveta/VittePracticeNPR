@@ -656,6 +656,58 @@ def main():
                 color = recognize_color_gpt4(img_bgr)
                 progress_bar.progress(50)
 
+def fix_number_format_new_rus(plate_number: str, confs: List[float]):
+    pattern = r"^([АВЕКМНОРСТУХ])\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}$"
+    if re.match(pattern, plate_number):
+        return plate_number, confs
+    if plate_number and plate_number[-1] in "АВЕКМНОРСТУХ":
+        candidate = plate_number[:-1]
+        if re.match(pattern, candidate):
+            return candidate, confs[:-1]
+    return plate_number, confs
+
+###############################################################################
+# ЭКСПОРТ / ИМПОРТ JSON‑XML
+###############################################################################
+
+ def generate_json_result(plate_number: str, brand: str, car_type: str, color: str) -> str:
+     return json.dumps({
+         "plate_number": plate_number or "",
+         "brand": brand or "",
+         "car_type": car_type or "",
+         "color": color or ""
+     }, ensure_ascii=False, indent=4)
+ 
+ 
+ def generate_xml_result(plate_number: str, brand: str, car_type: str, color: str) -> str:
+     root = ET.Element("CarAnalysisResult")
+     ET.SubElement(root, "PlateNumber").text = plate_number or ""
+     ET.SubElement(root, "Brand").text = brand or ""
+     ET.SubElement(root, "CarType").text = car_type or ""
+     ET.SubElement(root, "Color").text = color or ""
+     return ET.tostring(root, encoding="utf-8").decode()
+ 
+ 
+ def parse_json(json_str: str):
+     try:
+         d = json.loads(json_str)
+         return d.get('plate_number', ''), d.get('brand', ''), d.get('car_type', ''), d.get('color', '')
+     except Exception:
+         return '', '', '', ''
+ 
+ 
+ def parse_xml(xml_str: str):
+     try:
+         r = ET.fromstring(xml_str)
+         return (
+             r.findtext('PlateNumber', default=''),
+             r.findtext('Brand', default=''),
+             r.findtext('CarType', default=''),
+             r.findtext('Color', default='')
+         )
+     except Exception:
+         return '', '', '', ''
+     
         # Если это номер РФ (старый / новый), проведём дополнительный анализ (регион, год)
         region_name = ""
         year_issued = ""
