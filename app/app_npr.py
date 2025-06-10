@@ -804,13 +804,39 @@ def fix_number_format_new_rus(plate_number: str, confs: List[float]):
         st.write("Пока нет записей в статистике.")
 
 ###############################################################################
-# Запуск
+# ОСНОВНОЕ ПРИЛОЖЕНИЕ
 ###############################################################################
-if __name__ == '__main__':
-    # Если runtime существует, запускаем напрямую
-    if runtime.exists():
-        main()
-    else:
-        # Иначе запускаем через streamlit run
-        sys.argv = ["streamlit", "run", sys.argv[0]]
-        sys.exit(stcli.main())
+
+def main():
+    init_stats()
+    st.set_page_config(page_title="AI Автоанализатор", layout="wide")
+    st.title("Автомобильный Анализатор (AI)")
+
+    # ‑‑‑ Сайдбар
+    with st.sidebar:
+        st.header("1) Загрузка и Настройки")
+        uploaded_file = st.file_uploader("Выберите изображение автомобиля", type=["jpg", "jpeg", "png"])
+
+        number_format = st.selectbox(
+            "Формат номера:",
+            ['Старые РФ номера', 'Новые РФ номера', 'Зарубежные номера', 'Европейские номера',
+             'Австралийские номера', 'Американские номера'],
+            index=1
+        )
+
+        detection_method = st.selectbox(
+            "Метод детекции номера:",
+            ['YOLOv8', 'Haar Cascade (legacy)'],
+            index=0 if yolo_model else 1,
+            help="YOLOv8 быстрее и надёжнее, но требует модель YOLOv8.pt"
+        )
+
+        task = st.radio(
+            "Выберите задачу:",
+            ['Распознать номер', 'Определить марку', 'Определить тип автомобиля', 'Определить цвет', 'Всё сразу']
+        )
+
+        confidence_threshold = st.slider(
+            "Порог уверенности (CNN), ниже — символ '?'",
+            0.0, 1.0, 0.5, 0.05
+        )
