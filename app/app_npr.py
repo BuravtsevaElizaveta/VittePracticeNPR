@@ -908,3 +908,25 @@ analyze_button = st.button("Анализировать")
                 f_type = ex.submit(classify_car_type, img_bgr)
                 brand, color, car_type = f_brand.result(), f_color.result(), f_type.result()
             progress.progress(90)
+else:
+            # Разбор по отдельным задачам
+            if task == 'Распознать номер':
+                st.subheader("Распознавание номера…")
+                plate_img, plate_part = plate_detect(img_bgr, method=detection_method)
+                st.image(plate_img, caption="Обнаруженный номер", width=300)
+                plate_number, confs = recognize_number_cnn(plate_part, model_cnn, confidence_threshold)
+                if number_format == 'Новые РФ номера' and plate_number:
+                    plate_number, confs = fix_number_format_new_rus(plate_number, confs)
+                progress.progress(50)
+            if task == 'Определить марку':
+                st.subheader("Определение марки…")
+                brand = recognize_brand_gpt4(img_bgr)
+                progress.progress(50)
+            if task == 'Определить тип автомобиля':
+                st.subheader("Определение типа…")
+                car_type = classify_car_type(img_bgr)
+                progress.progress(50)
+            if task == 'Определить цвет':
+                st.subheader("Определение цвета…")
+                color = recognize_color_gpt4(img_bgr)
+                progress.progress(50)
