@@ -561,22 +561,6 @@ def main():
         imported_xml_file = st.file_uploader("Импорт XML", type=["xml"], key="xml_uploader")
 
         import_button = st.button("Загрузить результаты из файла")
-
-    # Основной экран: просмотр изображения
-    if uploaded_file is not None:
-        # Масштабируем изображение до фиксированной ширины (400 px), чтобы избежать
-        # избыточного растягивания и не использовать "use_column_width"
-        pil_img_raw = Image.open(uploaded_file)
-        w_percent = (400 / float(pil_img_raw.width))
-        h_size = int((float(pil_img_raw.height) * float(w_percent)))
-        pil_img_resized = pil_img_raw.resize((400, h_size), Image.Resampling.LANCZOS)
-
-        st.image(
-            pil_img_resized,
-            caption="Загруженное изображение (уменьшено)",
-            # width=400 # можно и так, но уже вручную ресайзим => убираем
-        )
-
     # Импорт JSON/XML
     if import_button:
         if imported_json_file is not None:
@@ -841,6 +825,34 @@ def main():
             0.0, 1.0, 0.5, 0.05
         )
      analyze_button = st.button("Анализировать")
+
+        st.write("---")
+        st.header("2) Импорт результатов (JSON/XML)")
+        imported_json_file = st.file_uploader("Импорт JSON", type=["json"])
+        imported_xml_file = st.file_uploader("Импорт XML", type=["xml"])
+        import_button = st.button("Загрузить результаты из файла")
+
+    # ‑‑‑ Основной экран: предпросмотр
+    if uploaded_file:
+        pil_img_raw = Image.open(uploaded_file)
+        w_percent = 400.0 / pil_img_raw.width
+        pil_img_resized = pil_img_raw.resize((400, int(pil_img_raw.height * w_percent)), Image.Resampling.LANCZOS)
+        st.image(pil_img_resized, caption="Загруженное изображение (уменьшено)")
+
+    # ‑‑‑ Импорт JSON/XML
+    if import_button:
+        if imported_json_file:
+            plate_i, brand_i, type_i, color_i = parse_json(imported_json_file.read().decode())
+            st.success("Данные из JSON загружены:")
+            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
+        elif imported_xml_file:
+            plate_i, brand_i, type_i, color_i = parse_xml(imported_xml_file.read().decode())
+            st.success("Данные из XML загружены:")
+            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
+        else:
+            st.warning("Не выбран файл для импорта.")
+
+analyze_button = st.button("Анализировать")
 
         st.write("---")
         st.header("2) Импорт результатов (JSON/XML)")
