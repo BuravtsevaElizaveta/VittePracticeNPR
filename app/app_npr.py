@@ -890,3 +890,21 @@ analyze_button = st.button("Анализировать")
 
         plate_number = brand = car_type = color = None
         confs: List[float] = []
+
+ # Обработка «Всё сразу»
+        if task == 'Всё сразу':
+            plate_img, plate_part = plate_detect(img_bgr, method=detection_method)
+            st.subheader("Распознавание номера…")
+            st.image(plate_img, caption="Обнаруженный номер", width=300)
+            plate_number, confs = recognize_number_cnn(plate_part, model_cnn, confidence_threshold)
+            if number_format == 'Новые РФ номера' and plate_number:
+                plate_number, confs = fix_number_format_new_rus(plate_number, confs)
+            progress.progress(20)
+
+            # Параллельные GPT‑задачи
+            with concurrent.futures.ThreadPoolExecutor() as ex:
+                f_brand = ex.submit(recognize_brand_gpt4, img_bgr)
+                f_color = ex.submit(recognize_color_gpt4, img_bgr)
+                f_type = ex.submit(classify_car_type, img_bgr)
+                brand, color, car_type = f_brand.result(), f_color.result(), f_type.result()
+            progress.progress(90)
