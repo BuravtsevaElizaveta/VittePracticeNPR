@@ -125,14 +125,31 @@ def safe_chat_completion(messages, model="gpt-4o", temperature: float = 0.0, max
 
 
 ###############################################################################
-# ЗАГРУЗКА МОДЕЛИ CNN
+# ЗАГРУЗКА МОДЕЛЕЙ (кэшируется Streamlit)
 ###############################################################################
-@st.cache_resource
+
+@st.cache_resource(show_spinner="Загрузка YOLO‑модели …")
+def load_yolo_model():
+    if YOLO_MODEL_PATH.exists():
+        try:
+            model = YOLO(str(YOLO_MODEL_PATH))
+            logging.info("YOLOv8 model loaded successfully.")
+            return model
+        except Exception as e:
+            logging.error(f"Failed to load YOLOv8 model: {e}")
+    else:
+        logging.warning("YOLOv8 weights not found – fallback to Haar cascade.")
+    return None  # сигнал для фолбэка
+
+yolo_model = load_yolo_model()
+
+
+@st.cache_resource(show_spinner="Загрузка CNN‑модели …")
 def load_model_cnn():
-    if not os.path.exists(MODEL_PATH):
-        raise FileNotFoundError(f"Модель не найдена: {MODEL_PATH}")
-    model_cnn_loaded = tf.keras.models.load_model(MODEL_PATH)
-    logging.info("Модель CNN успешно загружена.")
+    if not CNN_MODEL_PATH.exists():
+        raise FileNotFoundError(f"CNN model not found: {CNN_MODEL_PATH}")
+    model_cnn_loaded = tf.keras.models.load_model(str(CNN_MODEL_PATH))
+    logging.info("CNN model loaded successfully.")
     return model_cnn_loaded
 
 model_cnn = load_model_cnn()
