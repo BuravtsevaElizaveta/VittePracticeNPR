@@ -74,6 +74,23 @@ warnings.filterwarnings(
 logging.getLogger('streamlit.runtime.scriptrunner_utils').setLevel(logging.ERROR)
 logging.getLogger('streamlit').setLevel(logging.ERROR)
 
+
+###############################################################################
+# ГЛОБАЛЬНАЯ СТАТИСТИКА
+###############################################################################
+
+def init_stats():
+    if 'stat_items' not in st.session_state:
+        st.session_state['stat_items'] = []
+
+
+def add_stat_item(plate_number: str, region: str, year: str):
+    st.session_state['stat_items'].append({
+        'plate_number': plate_number,
+        'region': region,
+        'year_issued': year
+    })
+
 ###############################################################################
 # ЛОГИРОВАНИЕ
 ###############################################################################
