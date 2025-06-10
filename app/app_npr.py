@@ -237,117 +237,20 @@ def analyze_russian_number_gpt(plate_number: str) -> (str, str):
     except Exception as e:
         logging.error(f"[GPT-4o Error analyze_russian_number_gpt]: {e}")
         return ("", "")
-
-###############################################################################
-# ВЫДЕЛЕНИЕ НОМЕРА (каскад Хаара)
-###############################################################################
-def plate_detect(img):
-    """
-    Находит номер на изображении (используя каскад Хаара) и возвращает:
-    - plateImg (исходное изображение с прямоугольником вокруг номера)
-    - plate_part (ROI - та часть, где расположен номер).
-    """
-    plateCascade = cv2.CascadeClassifier(CASCADE_PATH)
-    plateImg = img.copy()
-    roi = img.copy()
-    plateRect = plateCascade.detectMultiScale(plateImg, scaleFactor=1.1, minNeighbors=5)
-    plate_part = None
-    for (x, y, w, h) in plateRect:
-        plate_part = roi[y:y+h, x:x+w]
-        cv2.rectangle(plateImg, (x, y), (x+w, y+h), (0, 255, 0), 2)
-    return plateImg, plate_part
-
-###############################################################################
-# СЕГМЕНТАЦИЯ СИМВОЛОВ НОМЕРНОГО ЗНАКА
-###############################################################################
-def segment_characters(image):
-    """
-    Разделяет номер на отдельные символы (ROI для каждого символа).
-    Возвращает массив numpy из картинок-символов.
-    """
-    if image is None:
-        return []
-
-    # Сжимаем до 333x75
-    img_lp = cv2.resize(image, (333, 75))
-    img_gray_lp = cv2.cvtColor(img_lp, cv2.COLOR_BGR2GRAY)
-    img_binary_lp = cv2.adaptiveThreshold(
-        img_gray_lp, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2
-    )
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-    img_binary_lp = cv2.morphologyEx(img_binary_lp, cv2.MORPH_CLOSE, kernel, iterations=1)
-
-    # Убираем шум по границам
-    img_binary_lp[0:3, :] = 255
-    img_binary_lp[:, 0:3] = 255
-    img_binary_lp[72:75, :] = 255
-    img_binary_lp[:, 330:333] = 255
-
-    LP_WIDTH = img_binary_lp.shape[0]
-    LP_HEIGHT = img_binary_lp.shape[1]
-    dimensions = [
-        LP_WIDTH / 6,        # min height
-        LP_WIDTH / 2,        # max height
-        LP_HEIGHT / 10,      # min width
-        2 * LP_HEIGHT / 3    # max width
-    ]
-
-    cntrs, hierarchy = cv2.findContours(
-        img_binary_lp.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE
-    )
-    if hierarchy is None:
-        return []
-
-    lower_width = dimensions[0] * 0.5
-    upper_width = dimensions[1] * 1.2
-    lower_height = dimensions[2] * 0.5
-    upper_height = dimensions[3] * 1.2
-
-    x_cntr_list = []
-    img_res = []
-
-    for i, cntr in enumerate(cntrs):
-        # Ориентируемся на вложенные контуры (hierarchy[0][i][3] != -1),
-        # чтобы убрать слишком большие внешние рамки
-        if hierarchy[0][i][3] != -1:
-            intX, intY, intWidth, intHeight = cv2.boundingRect(cntr)
-            aspect_ratio = intWidth / intHeight
-
-            if (lower_width < intWidth < upper_width) \
-               and (lower_height < intHeight < upper_height) \
-               and (0.3 < aspect_ratio < 1.2):
-                x_cntr_list.append(intX)
-
-                char_copy = np.zeros((44, 24))
-                char = img_binary_lp[intY:intY+intHeight, intX:intX+intWidth]
-                char = cv2.resize(char, (20, 40))
-                char = cv2.subtract(255, char)
-
-                char_copy[2:42, 2:22] = char
-                img_res.append(char_copy)
-
-    # Сортируем символы слева направо
-    indices = sorted(range(len(x_cntr_list)), key=lambda k: x_cntr_list[k])
-    img_res_copy = [img_res[idx] for idx in indices]
-
-    return np.array(img_res_copy)
-
-def recognize_color_gpt4(img_bgr, max_size: int = 224, quality: int = 30) -> str:
-    """GPT‑4o: распознаём цвет автомобиля."""
-    default_color = "Не удалось распознать цвет"
-    h, w = img_bgr.shape[:2]
-    scale = max_size / float(max(h, w))
-    if scale < 1.0:
-        img_bgr = cv2.resize(img_bgr, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_AREA)
-
-    success, encoded_img = cv2.imencode(".jpg", img_bgr, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
+def classify_car_type(img_bgr) -> str:
+    """GPT‑4o: классифицируем тип ТС."""
+    default_type = "Не удалось классифицировать тип автомобиля"
+    success, encoded_img = cv2.imencode(".jpg", img_bgr, [int(cv2.IMWRITE_JPEG_QUALITY), 30])
     if not success:
-        return default_color
-
+        return default_type
     img_base64 = base64.b64encode(encoded_img).decode()
-    system_msg = "Ты — помощник, распознающий основной цвет автомобиля на изображении."
+
+    system_msg = (
+        "Ты — помощник, классифицирующий тип автомобиля на изображении. "
+        "Классифицируй его как: легковой, грузовой, автобус, мотоцикл."
+    )
     user_msg = [
-        {"type": "input_text", "text": "Определите основной цвет автомобиля на этом изображении."},
+        {"type": "input_text", "text": "Определите тип этого транспортного средства."},
         {"type": "input_image", "image_url": f"data:image/jpeg;base64,{img_base64}"}
     ]
     messages = [
@@ -360,8 +263,37 @@ def recognize_color_gpt4(img_bgr, max_size: int = 224, quality: int = 30) -> str
         if hasattr(response, 'output') and response.output:
             return response.output[0].content[0].text.strip()
     except Exception as e:
-        logging.error(f"[GPT‑4o color] {e}")
-    return default_color
+        logging.error(f"[GPT‑4o type] {e}")
+    return default_type
+
+def analyze_russian_number_gpt(plate_number: str) -> Tuple[str, str]:
+    """GPT‑4o: определяем регион и год выдачи российского номера."""
+    if not plate_number:
+        return "", ""
+
+    system_msg = (
+        "Ты — помощник, анализирующий российский госномер. "
+        "У номера формат: одна буква, три цифры, две буквы, регион (2‑3 цифры). "
+        "По коду региона определи субъект РФ и предположи год выдачи. "
+        "Верни JSON: {\"region_name\": \"...\", \"year_issued\": \"...\"}."
+    )
+    user_msg = [{"type": "input_text", "text": f"Определи регион и год выдачи для номера: {plate_number}."}]
+    messages = [
+        {"role": "system", "content": system_msg},
+        {"role": "user", "content": user_msg}
+    ]
+
+    try:
+        response = safe_chat_completion(messages, temperature=0.1)
+        if hasattr(response, 'output') and response.output:
+            try:
+                data = json.loads(response.output[0].content[0].text.strip())
+                return data.get("region_name", ""), data.get("year_issued", "")
+            except json.JSONDecodeError:
+                pass
+    except Exception as e:
+        logging.error(f"[GPT‑4o region/year] {e}")
+    return "", ""
 
 ###############################################################################
 # ИСПРАВЛЕНИЕ ФОРМАТА ДЛЯ НОВЫХ РФ НОМЕРОВ
