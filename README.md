@@ -47,7 +47,7 @@ README.md                # Документация проекта
 4. Запустите приложение:
 
    ```bash
-   streamlit run app.py
+   streamlit run app_npr.py
    ```
 5. Откройте в браузере: `http://localhost:8501`
 
