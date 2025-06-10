@@ -43,15 +43,33 @@ import openai
 import concurrent.futures
 
 ###############################################################################
-# Подавляем служебные предупреждения Streamlit при запуске не через "streamlit run"
+# КОНФИГУРАЦИЯ ПУТЕЙ / МОДЕЛЕЙ
 ###############################################################################
+# Папка utils (с YOLO‑моделью и вспомогательными модулями)
+UTILS_DIR = Path(__file__).parent / "utils"
+if UTILS_DIR.exists() and str(UTILS_DIR) not in sys.path:
+    sys.path.append(str(UTILS_DIR))
+
+# Пути к весам моделей
+YOLO_MODEL_PATH = UTILS_DIR / "YOLOv8.pt"
+CNN_MODEL_PATH = Path("model.h5")
+CASCADE_PATH = Path("haarcascade_licence_plate_rus_16stages.xml")
+
+# Разрешённые символы для модели CNN (пример)
+characters = '0123456789АВЕКМНОРСТУХ'
+num_to_char = {i: ch for i, ch in enumerate(characters)}
+
+###############################################################################
+# УСТАНОВКИ STREAMLIT
+###############################################################################
+# Подавляем служебные предупреждения
 warnings.filterwarnings(
     "ignore",
     message="Thread 'MainThread': missing ScriptRunContext"
 )
 warnings.filterwarnings(
     "ignore",
-    message="Session state does not function when running a script without streamlit run"
+    message="Session state does not function when running a script without `streamlit run`"
 )
 logging.getLogger('streamlit.runtime.scriptrunner_utils').setLevel(logging.ERROR)
 logging.getLogger('streamlit').setLevel(logging.ERROR)
