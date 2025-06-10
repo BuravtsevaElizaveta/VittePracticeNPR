@@ -1,0 +1,1258 @@
+Python 3.9.12 (tags/v3.9.12:b28265d, Mar 23 2022, 23:52:46) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+= RESTART: C:\Users\user\OneDrive\Рабочий стол\Методы извлечения автомобильных номеров\task1.py
+Loaded template for character 0
+Loaded template for character 1
+Loaded template for character 2
+Loaded template for character 3
+Loaded template for character 4
+Loaded template for character 5
+Loaded template for character 6
+Loaded template for character 7
+Loaded template for character 8
+Loaded template for character 9
+Loaded template for character А
+Loaded template for character В
+Loaded template for character Е
+Loaded template for character К
+Loaded template for character М
+Loaded template for character Н
+Loaded template for character О
+Loaded template for character Р
+Loaded template for character С
+Loaded template for character Т
+Loaded template for character У
+Loaded template for character Х
+Segment (0, 11, 176, 48): Best match = У, Score = 0.023265067487955093
+Segment (0, 0, 176, 12): Best match = Т, Score = -0.002348936628550291
+Segment (1, 19, 1, 1): Best match = 0, Score = 0.0
+Segment (1, 17, 2, 1): Best match = 0, Score = 0.0
+Segment (3, 20, 3, 4): Best match = У, Score = 0.19996754825115204
+Segment (4, 17, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (6, 25, 11, 8): Best match = А, Score = 0.20391100645065308
+Segment (32, 21, 13, 38): Best match = С, Score = 0.11528215557336807
+Segment (41, 20, 13, 39): Best match = К, Score = 0.09221618622541428
+Segment (50, 21, 14, 38): Best match = А, Score = 0.11683978885412216
+Segment (59, 22, 14, 37): Best match = С, Score = 0.09373871982097626
+Segment (68, 22, 15, 37): Best match = А, Score = 0.1089572086930275
+Segment (78, 23, 14, 36): Best match = А, Score = 0.05290856212377548
+Segment (106, 23, 14, 36): Best match = А, Score = 0.11251981556415558
+Segment (116, 23, 14, 36): Best match = А, Score = 0.1366388201713562
+Segment (126, 25, 14, 34): Best match = А, Score = 0.1311289668083191
+Segment (136, 26, 14, 33): Best match = А, Score = 0.12581884860992432
+Segment (146, 26, 13, 33): Best match = 7, Score = 0.1765841692686081
+Файл: 0805МИМ.jpg
+Распознанный текст: УТ00УРАСКА
+Ожидаемый текст: 0805МИМ
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.2919 секунд
+Время предобработки: 0.0120 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (1, 2, 60, 16): Best match = М, Score = 0.2262365072965622
+Segment (58, 0, 5, 3): Best match = К, Score = 0.13781563937664032
+Файл: 1493ТУЩ.jpg
+Распознанный текст: МК
+Ожидаемый текст: 1493ТУЩ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0778 секунд
+Время предобработки: 0.0020 секунд
+Время постобработки: 0.0000 секунд
+
+Номерная пластина не найдена в изображении 1645ОМО.jpg
+Номерная пластина не найдена в изображении 2137ОГД.jpg
+Номерная пластина не найдена в изображении 3154МКЦ.jpg
+Segment (0, 35, 2, 2): Best match = М, Score = 0.18800128996372223
+Segment (0, 0, 121, 35): Best match = М, Score = 0.18970173597335815
+Segment (0, 0, 116, 7): Best match = Т, Score = 0.010788178071379662
+Segment (1, 39, 1, 1): Best match = 0, Score = 0.0
+Segment (4, 35, 6, 2): Best match = В, Score = 0.18075278401374817
+Segment (11, 35, 2, 1): Best match = 0, Score = 0.0
+Segment (19, 36, 4, 2): Best match = 0, Score = 0.0
+Segment (28, 35, 8, 3): Best match = Р, Score = 0.24005211889743805
+Segment (37, 36, 1, 1): Best match = 0, Score = 0.0
+Segment (42, 35, 16, 3): Best match = М, Score = 0.3851943016052246
+Segment (59, 36, 7, 2): Best match = М, Score = 0.3153834044933319
+Segment (84, 37, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (119, 39, 2, 1): Best match = 0, Score = 0.0
+Файл: 3580ХКБ.jpg
+Распознанный текст: ММТ0В00Р0М
+Ожидаемый текст: 3580ХКБ
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0838 секунд
+Время предобработки: 0.0050 секунд
+Время постобработки: 0.0000 секунд
+
+Номерная пластина не найдена в изображении 3782ОДЮ.jpg
+Номерная пластина не найдена в изображении 6745ВЛМ.jpg
+Номерная пластина не найдена в изображении 6779ЛДТ.jpg
+Segment (0, 96, 4, 9): Best match = 3, Score = 0.3043314516544342
+Segment (0, 89, 1, 2): Best match = 0, Score = 0.0
+Segment (0, 84, 2, 4): Best match = Р, Score = 0.16982455551624298
+Segment (0, 72, 1, 1): Best match = 0, Score = 0.0
+Segment (0, 29, 24, 76): Best match = Т, Score = 0.2537168562412262
+Segment (0, 14, 317, 30): Best match = 1, Score = 0.0766482725739479
+Segment (0, 0, 317, 27): Best match = 7, Score = 0.01579851657152176
+Segment (1, 92, 1, 1): Best match = 0, Score = 0.0
+Segment (5, 28, 1, 1): Best match = 0, Score = 0.0
+Segment (16, 28, 1, 1): Best match = 0, Score = 0.0
+Segment (19, 29, 1, 1): Best match = 0, Score = 0.0
+Segment (23, 29, 64, 76): Best match = К, Score = 0.14325091242790222
+Segment (32, 77, 1, 1): Best match = 0, Score = 0.0
+Segment (39, 70, 11, 35): Best match = 8, Score = 0.30213260650634766
+Segment (45, 29, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (54, 71, 11, 34): Best match = 8, Score = 0.33885490894317627
+Segment (73, 29, 2, 2): Best match = А, Score = 0.20003238320350647
+Segment (84, 33, 18, 72): Best match = 7, Score = 0.24001747369766235
+Segment (87, 29, 3, 4): Best match = Т, Score = -0.05571330338716507
+Segment (100, 31, 18, 74): Best match = Е, Score = 0.26839619874954224
+Segment (116, 31, 18, 74): Best match = Е, Score = 0.2739567756652832
+Segment (132, 35, 18, 70): Best match = 7, Score = 0.26447156071662903
+Segment (148, 37, 18, 68): Best match = Е, Score = 0.24855518341064453
+Segment (158, 93, 2, 1): Best match = 0, Score = 0.0
+Segment (161, 83, 1, 1): Best match = 0, Score = 0.0
+Segment (164, 38, 18, 67): Best match = 7, Score = 0.2614190876483917
+Segment (176, 34, 3, 1): Best match = 0, Score = 0.0
+Segment (180, 39, 18, 66): Best match = Е, Score = 0.2688826322555542
+Segment (183, 36, 2, 2): Best match = 0, Score = 0.0
+Segment (190, 35, 5, 1): Best match = 0, Score = 0.0
+Segment (197, 40, 17, 65): Best match = Е, Score = 0.2828282415866852
+Segment (199, 37, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (207, 36, 1, 1): Best match = 0, Score = 0.0
+Segment (213, 41, 17, 64): Best match = 7, Score = 0.2938266694545746
+Segment (215, 38, 2, 2): Best match = 0, Score = 0.0
+Segment (229, 41, 17, 64): Best match = 2, Score = 0.3102465271949768
+Segment (231, 39, 3, 2): Best match = 1, Score = 0.23471605777740479
+Segment (241, 41, 1, 1): Best match = 0, Score = 0.0
+Segment (246, 43, 17, 62): Best match = 7, Score = 0.2885870337486267
+Segment (255, 42, 3, 1): Best match = 0, Score = 0.0
+Segment (257, 39, 2, 1): Best match = 0, Score = 0.0
+Segment (262, 45, 17, 60): Best match = 7, Score = 0.3069685399532318
+Segment (271, 43, 3, 1): Best match = 0, Score = 0.0
+Segment (279, 46, 17, 59): Best match = 7, Score = 0.31174543499946594
+Segment (287, 41, 1, 1): Best match = 0, Score = 0.0
+Segment (291, 41, 1, 1): Best match = 0, Score = 0.0
+Segment (295, 47, 17, 58): Best match = 7, Score = 0.3012827932834625
+Segment (296, 42, 4, 3): Best match = Е, Score = 0.12820780277252197
+Segment (304, 45, 6, 1): Best match = 0, Score = 0.0
+Segment (311, 43, 5, 4): Best match = Т, Score = 0.13035862147808075
+Segment (312, 73, 5, 32): Best match = А, Score = 0.2777133882045746
+Файл: 7254МКЮ.jpg
+Распознанный текст: 30Р0Т17К08
+Ожидаемый текст: 7254МКЮ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1845 секунд
+Время предобработки: 0.0349 секунд
+Время постобработки: 0.0000 секунд
+
+Номерная пластина не найдена в изображении 7777ХКА.jpg
+Номерная пластина не найдена в изображении 8082ЛДС.jpg
+Номерная пластина не найдена в изображении 8817УКМ.jpg
+Segment (0, 43, 20, 19): Best match = А, Score = 0.2153741717338562
+Segment (0, 30, 2, 1): Best match = 0, Score = 0.0
+Segment (0, 9, 186, 53): Best match = 1, Score = 0.03508720546960831
+Segment (0, 0, 152, 13): Best match = Т, Score = 0.03441578149795532
+Segment (2, 28, 1, 1): Best match = 0, Score = 0.0
+Segment (6, 43, 2, 2): Best match = 0, Score = 0.0
+Segment (9, 44, 17, 18): Best match = А, Score = 0.21037913858890533
+Segment (12, 41, 9, 7): Best match = О, Score = -0.024473778903484344
+Segment (42, 28, 15, 34): Best match = 7, Score = 0.22272507846355438
+Segment (54, 27, 13, 35): Best match = У, Score = 0.25056537985801697
+Segment (65, 27, 13, 35): Best match = 4, Score = 0.27161526679992676
+Segment (77, 25, 13, 37): Best match = 7, Score = 0.25505635142326355
+Segment (87, 25, 14, 37): Best match = 7, Score = 0.25539645552635193
+Segment (99, 24, 13, 38): Best match = 7, Score = 0.23841193318367004
+Segment (101, 23, 2, 1): Best match = 0, Score = 0.0
+Segment (110, 24, 13, 38): Best match = 7, Score = 0.24541281163692474
+Segment (121, 23, 13, 39): Best match = 7, Score = 0.242121160030365
+Segment (132, 22, 13, 40): Best match = Р, Score = 0.2233264148235321
+Segment (144, 19, 42, 43): Best match = Х, Score = 0.1099167913198471
+Segment (153, 0, 9, 5): Best match = Н, Score = 0.015905605629086494
+Segment (160, 28, 3, 2): Best match = 0, Score = 0.0
+Segment (163, 0, 2, 2): Best match = 0, Score = 0.0
+Segment (166, 2, 1, 1): Best match = 0, Score = 0.0
+Segment (167, 4, 1, 1): Best match = 0, Score = 0.0
+Segment (169, 2, 1, 1): Best match = 0, Score = 0.0
+Segment (170, 23, 16, 19): Best match = А, Score = 0.17492926120758057
+Segment (171, 0, 5, 4): Best match = Н, Score = 0.15922224521636963
+Segment (177, 0, 9, 4): Best match = Н, Score = 0.07630648463964462
+Segment (181, 19, 5, 3): Best match = М, Score = 0.18929526209831238
+Файл: 9389МОЩ.jpg
+Распознанный текст: А01Т00АО7У
+Ожидаемый текст: 9389МОЩ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1387 секунд
+Время предобработки: 0.0120 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 20, 5, 2): Best match = О, Score = -0.21193450689315796
+Segment (0, 17, 4, 2): Best match = 0, Score = 0.0
+Segment (0, 13, 3, 2): Best match = 0, Score = 0.0
+Segment (0, 0, 176, 59): Best match = Р, Score = 0.10927185416221619
+Segment (151, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (162, 42, 14, 17): Best match = А, Score = 0.23331892490386963
+Segment (172, 40, 1, 2): Best match = 0, Score = 0.0
+Файл: A777AA77.jpg
+Распознанный текст: О00Р0А0
+Ожидаемый текст: A777AA77
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1925 секунд
+Время предобработки: 0.0100 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 355, 118): Best match = С, Score = -0.008768048137426376
+Файл: А033АМ774.jpg
+Распознанный текст: С
+Ожидаемый текст: А033АМ774
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1985 секунд
+Время предобработки: 0.0429 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 33, 15, 26): Best match = М, Score = 0.2222437709569931
+Segment (0, 23, 1, 1): Best match = 0, Score = 0.0
+Segment (0, 12, 21, 2): Best match = Т, Score = -0.053730130195617676
+Segment (0, 0, 305, 101): Best match = Е, Score = 0.056256260722875595
+Segment (0, 0, 289, 11): Best match = Р, Score = 0.1598823517560959
+Segment (10, 58, 3, 1): Best match = 0, Score = 0.0
+Segment (10, 23, 2, 1): Best match = 0, Score = 0.0
+Segment (67, 87, 3, 1): Best match = 0, Score = 0.0
+Segment (73, 83, 1, 1): Best match = 0, Score = 0.0
+Segment (78, 85, 2, 1): Best match = 0, Score = 0.0
+Segment (81, 85, 4, 1): Best match = 0, Score = 0.0
+Segment (92, 84, 18, 1): Best match = 0, Score = 0.0
+Segment (104, 82, 1, 1): Best match = 0, Score = 0.0
+Segment (115, 83, 16, 1): Best match = 0, Score = 0.0
+Segment (129, 81, 2, 1): Best match = 0, Score = 0.0
+Segment (137, 82, 2, 1): Best match = 0, Score = 0.0
+Segment (144, 82, 1, 1): Best match = 0, Score = 0.0
+Segment (145, 80, 13, 2): Best match = Т, Score = -0.11904732137918472
+Segment (148, 83, 1, 1): Best match = 0, Score = 0.0
+Segment (205, 20, 26, 31): Best match = Н, Score = 0.17925216257572174
+Segment (206, 24, 2, 2): Best match = М, Score = 0.18800128996372223
+Segment (208, 11, 8, 1): Best match = 0, Score = 0.0
+Segment (212, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (214, 0, 2, 1): Best match = 0, Score = 0.0
+Segment (215, 34, 1, 1): Best match = 0, Score = 0.0
+Segment (217, 0, 6, 1): Best match = 0, Score = 0.0
+Segment (224, 0, 4, 1): Best match = 0, Score = 0.0
+Segment (228, 19, 5, 4): Best match = Р, Score = 0.23809826374053955
+Segment (229, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (235, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (238, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (252, 41, 2, 2): Best match = 0, Score = 0.0
+Segment (253, 37, 1, 1): Best match = 0, Score = 0.0
+Segment (253, 19, 23, 28): Best match = М, Score = 0.29182952642440796
+Segment (258, 8, 1, 1): Best match = 0, Score = 0.0
+Segment (259, 47, 1, 1): Best match = 0, Score = 0.0
+Segment (267, 46, 2, 2): Best match = 3, Score = 0.040915265679359436
+Segment (275, 39, 1, 1): Best match = 0, Score = 0.0
+Segment (301, 56, 1, 1): Best match = 0, Score = 0.0
+Segment (303, 28, 2, 3): Best match = М, Score = 0.24678108096122742
+Файл: А1832АХ.jpg
+Распознанный текст: М0ТЕРТ0НМР
+Ожидаемый текст: А1832АХ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0718 секунд
+Время предобработки: 0.0319 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 48, 1, 1): Best match = 0, Score = 0.0
+Segment (0, 0, 151, 44): Best match = Р, Score = 0.21569448709487915
+Segment (11, 0, 3, 2): Best match = 1, Score = 0.23471605777740479
+Segment (15, 0, 56, 9): Best match = У, Score = 0.19888699054718018
+Segment (23, 46, 6, 4): Best match = К, Score = 0.2717057764530182
+Segment (27, 36, 124, 9): Best match = Р, Score = 0.23687776923179626
+Segment (60, 8, 4, 3): Best match = Р, Score = 0.26205024123191833
+Segment (72, 0, 33, 8): Best match = Т, Score = 0.09973398596048355
+Segment (92, 48, 4, 2): Best match = М, Score = 0.23947331309318542
+Segment (102, 0, 49, 9): Best match = 1, Score = -0.23500432074069977
+Segment (106, 46, 1, 1): Best match = 0, Score = 0.0
+Segment (110, 47, 2, 1): Best match = 0, Score = 0.0
+Segment (115, 48, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (119, 47, 1, 1): Best match = 0, Score = 0.0
+Segment (128, 45, 2, 2): Best match = 0, Score = 0.0
+Segment (136, 44, 2, 2): Best match = А, Score = 0.20003238320350647
+Segment (143, 42, 2, 2): Best match = 0, Score = 0.0
+Segment (144, 45, 1, 1): Best match = 0, Score = 0.0
+Segment (146, 43, 1, 1): Best match = 0, Score = 0.0
+Segment (147, 19, 4, 3): Best match = 3, Score = 0.08287789672613144
+Segment (149, 44, 1, 1): Best match = 0, Score = 0.0
+Segment (150, 17, 1, 1): Best match = 0, Score = 0.0
+Файл: А2222КС.jpg
+Распознанный текст: 0Р1УКРРТМ1
+Ожидаемый текст: А2222КС
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0698 секунд
+Время предобработки: 0.0080 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 19, 173, 39): Best match = 7, Score = 0.025997821241617203
+Segment (0, 1, 173, 7): Best match = М, Score = 0.2235998660326004
+Segment (4, 20, 1, 1): Best match = 0, Score = 0.0
+Segment (6, 32, 1, 1): Best match = 0, Score = 0.0
+Segment (6, 12, 158, 38): Best match = Е, Score = 0.06182081997394562
+Segment (7, 34, 1, 1): Best match = 0, Score = 0.0
+Segment (26, 13, 7, 2): Best match = М, Score = 0.3425360918045044
+Segment (34, 13, 50, 2): Best match = М, Score = 0.2594588100910187
+Segment (97, 0, 6, 1): Best match = 0, Score = 0.0
+Segment (102, 10, 2, 1): Best match = 0, Score = 0.0
+Segment (107, 14, 2, 1): Best match = 0, Score = 0.0
+Segment (111, 16, 42, 29): Best match = 3, Score = 0.15912814438343048
+Segment (111, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (114, 0, 44, 1): Best match = 0, Score = 0.0
+Segment (163, 9, 10, 8): Best match = 1, Score = 0.26735079288482666
+Segment (170, 19, 2, 2): Best match = А, Score = 0.20003238320350647
+Файл: А237ОХ177.jpg
+Распознанный текст: 7М00Е0ММ30
+Ожидаемый текст: А237ОХ177
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1047 секунд
+Время предобработки: 0.0110 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 16, 130, 69): Best match = Р, Score = 0.017002306878566742
+Segment (0, 0, 256, 85): Best match = Р, Score = 0.08116667717695236
+Segment (9, 23, 170, 51): Best match = 4, Score = 0.007498202845454216
+Segment (11, 74, 77, 9): Best match = Н, Score = 0.2663111686706543
+Segment (24, 72, 22, 1): Best match = 0, Score = 0.0
+Segment (43, 24, 1, 1): Best match = 0, Score = 0.0
+Segment (47, 23, 45, 1): Best match = 0, Score = 0.0
+Segment (48, 72, 2, 1): Best match = 0, Score = 0.0
+Segment (51, 72, 3, 1): Best match = 0, Score = 0.0
+Segment (51, 11, 3, 1): Best match = 0, Score = 0.0
+Segment (60, 71, 31, 1): Best match = 0, Score = 0.0
+Segment (91, 73, 11, 7): Best match = М, Score = 0.3698597252368927
+Segment (95, 22, 24, 1): Best match = 0, Score = 0.0
+Segment (101, 72, 17, 8): Best match = Н, Score = 0.15645577013492584
+Segment (110, 70, 10, 1): Best match = 0, Score = 0.0
+Segment (117, 73, 7, 6): Best match = 9, Score = 0.21625018119812012
+Segment (122, 22, 13, 1): Best match = 0, Score = 0.0
+Segment (126, 70, 11, 1): Best match = 0, Score = 0.0
+Segment (128, 72, 29, 7): Best match = Н, Score = 0.04071424901485443
+Segment (151, 21, 43, 1): Best match = 0, Score = 0.0
+Segment (151, 20, 82, 50): Best match = 6, Score = 0.03499581664800644
+Segment (159, 78, 1, 1): Best match = 0, Score = 0.0
+Segment (161, 70, 58, 9): Best match = А, Score = 0.24037109315395355
+Segment (219, 76, 7, 2): Best match = 8, Score = 0.26613548398017883
+Segment (234, 39, 1, 1): Best match = 0, Score = 0.0
+Segment (247, 33, 9, 18): Best match = А, Score = 0.2146923989057541
+Segment (253, 65, 1, 2): Best match = 0, Score = 0.0
+Segment (253, 59, 3, 1): Best match = 0, Score = 0.0
+Файл: А444АА15.jpg
+Распознанный текст: РР4НМ0Н090
+Ожидаемый текст: А444АА15
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1576 секунд
+Время предобработки: 0.0229 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 37, 18, 25): Best match = А, Score = 0.27594703435897827
+Segment (0, 26, 11, 10): Best match = Р, Score = 0.2924470901489258
+Segment (0, 17, 14, 1): Best match = 0, Score = 0.0
+Segment (0, 7, 187, 12): Best match = 2, Score = 0.19099290668964386
+Segment (17, 49, 147, 8): Best match = Р, Score = 0.13379532098770142
+Segment (18, 14, 114, 35): Best match = 5, Score = 0.03155761584639549
+Segment (77, 0, 3, 1): Best match = 0, Score = 0.0
+Segment (81, 0, 106, 2): Best match = 3, Score = -0.07027022540569305
+Segment (133, 18, 35, 32): Best match = Р, Score = -0.00897873193025589
+Segment (168, 48, 19, 13): Best match = 4, Score = 0.2186039537191391
+Segment (172, 59, 1, 1): Best match = 0, Score = 0.0
+Segment (177, 28, 10, 19): Best match = В, Score = 0.21770843863487244
+Файл: А652МР97.jpg
+Распознанный текст: АР02Р503Р4
+Ожидаемый текст: А652МР97
+Точность распознавания: 20.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0479 секунд
+Время предобработки: 0.0130 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 64, 113, 16): Best match = А, Score = 0.21712633967399597
+Segment (0, 18, 158, 46): Best match = 4, Score = 0.0891672670841217
+Segment (0, 2, 241, 16): Best match = Р, Score = 0.06915239989757538
+Segment (11, 14, 28, 2): Best match = М, Score = 0.2916969060897827
+Segment (15, 62, 7, 1): Best match = 0, Score = 0.0
+Segment (23, 62, 18, 2): Best match = 7, Score = 0.1642308533191681
+Segment (40, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (42, 63, 2, 1): Best match = 0, Score = 0.0
+Segment (42, 15, 5, 2): Best match = О, Score = -0.02253481186926365
+Segment (45, 63, 75, 4): Best match = Р, Score = 0.12338360399007797
+Segment (49, 16, 2, 1): Best match = 0, Score = 0.0
+Segment (52, 16, 11, 1): Best match = 0, Score = 0.0
+Segment (65, 16, 1, 1): Best match = 0, Score = 0.0
+Segment (68, 16, 2, 1): Best match = 0, Score = 0.0
+Segment (71, 16, 2, 1): Best match = 0, Score = 0.0
+Segment (77, 16, 2, 1): Best match = 0, Score = 0.0
+Segment (94, 17, 11, 1): Best match = 0, Score = 0.0
+Segment (117, 69, 20, 11): Best match = М, Score = 0.2423139065504074
+Segment (121, 65, 3, 1): Best match = 0, Score = 0.0
+Segment (121, 17, 5, 1): Best match = 0, Score = 0.0
+Segment (128, 66, 1, 1): Best match = 0, Score = 0.0
+Segment (130, 21, 111, 59): Best match = Е, Score = 0.0956265926361084
+Segment (137, 18, 1, 1): Best match = 0, Score = 0.0
+Segment (139, 18, 40, 2): Best match = Т, Score = -0.06090610846877098
+Segment (180, 18, 42, 8): Best match = А, Score = 0.1835574209690094
+Segment (198, 74, 2, 1): Best match = 0, Score = 0.0
+Segment (222, 0, 19, 1): Best match = 0, Score = 0.0
+Segment (224, 39, 2, 4): Best match = Р, Score = 0.16982455551624298
+Файл: А777АА777.jpg
+Распознанный текст: А4РМ0700ОР
+Ожидаемый текст: А777АА777
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0738 секунд
+Время предобработки: 0.0190 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 13, 282, 81): Best match = Е, Score = 0.07898575812578201
+Segment (0, 1, 2, 4): Best match = Р, Score = 0.12564076483249664
+Segment (0, 0, 282, 11): Best match = Н, Score = 0.1738395243883133
+Segment (7, 2, 3, 3): Best match = 4, Score = 0.36085110902786255
+Segment (22, 4, 1, 1): Best match = 0, Score = 0.0
+Segment (36, 3, 2, 2): Best match = М, Score = 0.18800128996372223
+Segment (64, 4, 1, 1): Best match = 0, Score = 0.0
+Segment (95, 0, 6, 5): Best match = 4, Score = 0.3405774235725403
+Segment (109, 0, 6, 5): Best match = 4, Score = 0.3405774235725403
+Segment (122, 0, 7, 5): Best match = 4, Score = 0.3269630968570709
+Segment (130, 0, 6, 5): Best match = Р, Score = 0.25918513536453247
+Segment (143, 0, 7, 5): Best match = Р, Score = 0.288821280002594
+Segment (156, 0, 8, 5): Best match = 4, Score = 0.2661270201206207
+Segment (171, 0, 7, 4): Best match = 4, Score = 0.34634503722190857
+Segment (185, 0, 6, 4): Best match = А, Score = 0.26134005188941956
+Segment (198, 0, 7, 4): Best match = 4, Score = 0.34634503722190857
+Segment (212, 0, 7, 4): Best match = 7, Score = 0.20203468203544617
+Segment (225, 0, 7, 4): Best match = 4, Score = 0.2820611596107483
+Segment (238, 0, 8, 4): Best match = 4, Score = 0.32985609769821167
+Segment (251, 0, 8, 4): Best match = 4, Score = 0.2529256343841553
+Segment (264, 0, 10, 4): Best match = 4, Score = 0.33663368225097656
+Файл: В707ОР77.jpg
+Распознанный текст: ЕРН40М0РР4
+Ожидаемый текст: В707ОР77
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1027 секунд
+Время предобработки: 0.0269 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 322, 107): Best match = Р, Score = 0.04380323737859726
+Файл: В990КТ777.jpg
+Распознанный текст: Р
+Ожидаемый текст: В990КТ777
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0888 секунд
+Время предобработки: 0.0349 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (3, 5, 82, 22): Best match = Р, Score = 0.16304656863212585
+Segment (33, 0, 3, 1): Best match = 0, Score = 0.0
+Segment (71, 0, 5, 1): Best match = 0, Score = 0.0
+Segment (79, 0, 12, 4): Best match = Т, Score = -0.13123875856399536
+Segment (87, 28, 3, 2): Best match = Т, Score = 0.1431545466184616
+Файл: Е005АМ777.jpg
+Распознанный текст: Р00ТТ
+Ожидаемый текст: Е005АМ777
+Точность распознавания: 40.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0678 секунд
+Время предобработки: 0.0030 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 337, 112): Best match = Т, Score = 0.04343606159090996
+Segment (21, 28, 221, 62): Best match = С, Score = -0.0032565901055932045
+Segment (51, 94, 26, 8): Best match = К, Score = 0.18464787304401398
+Segment (56, 103, 7, 1): Best match = 0, Score = 0.0
+Segment (65, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (68, 108, 1, 1): Best match = 0, Score = 0.0
+Segment (70, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (70, 28, 41, 1): Best match = 0, Score = 0.0
+Segment (71, 108, 1, 1): Best match = 0, Score = 0.0
+Segment (73, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (74, 108, 1, 1): Best match = 0, Score = 0.0
+Segment (76, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (78, 103, 4, 1): Best match = 0, Score = 0.0
+Segment (78, 95, 8, 7): Best match = М, Score = -0.07720701396465302
+Segment (86, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (87, 95, 9, 7): Best match = О, Score = 0.11197172105312347
+Segment (91, 103, 3, 1): Best match = 0, Score = 0.0
+Segment (95, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (97, 96, 51, 9): Best match = Т, Score = 0.15026052296161652
+Segment (104, 106, 1, 1): Best match = 0, Score = 0.0
+Segment (104, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (115, 28, 105, 1): Best match = 0, Score = 0.0
+Segment (125, 103, 7, 2): Best match = Т, Score = 0.220256969332695
+Segment (126, 18, 3, 3): Best match = Р, Score = 0.12432286143302917
+Segment (127, 108, 1, 1): Best match = 0, Score = 0.0
+Segment (130, 20, 1, 1): Best match = 0, Score = 0.0
+Segment (133, 103, 1, 2): Best match = 0, Score = 0.0
+Segment (135, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (137, 103, 3, 2): Best match = О, Score = 0.12158416956663132
+Segment (141, 104, 1, 1): Best match = 0, Score = 0.0
+Segment (143, 97, 28, 8): Best match = 7, Score = 0.03204302117228508
+Segment (149, 19, 1, 1): Best match = 0, Score = 0.0
+Segment (154, 104, 2, 1): Best match = 0, Score = 0.0
+Segment (158, 103, 4, 2): Best match = 4, Score = 0.2476770132780075
+Segment (163, 103, 1, 2): Best match = 0, Score = 0.0
+Segment (167, 19, 7, 3): Best match = А, Score = 0.1502002775669098
+Segment (168, 104, 1, 1): Best match = 0, Score = 0.0
+Segment (170, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (172, 104, 1, 1): Best match = 0, Score = 0.0
+Segment (173, 22, 164, 90): Best match = Р, Score = 0.03652520477771759
+Segment (175, 109, 2, 1): Best match = 0, Score = 0.0
+Segment (176, 90, 2, 1): Best match = 0, Score = 0.0
+Segment (177, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (180, 104, 1, 1): Best match = 0, Score = 0.0
+Segment (184, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (185, 109, 3, 3): Best match = А, Score = 0.2795751690864563
+Segment (189, 111, 3, 1): Best match = 0, Score = 0.0
+Segment (193, 111, 4, 1): Best match = 0, Score = 0.0
+Segment (193, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (195, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (203, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (206, 103, 1, 1): Best match = 0, Score = 0.0
+Segment (208, 103, 2, 1): Best match = 0, Score = 0.0
+Segment (224, 27, 88, 62): Best match = Т, Score = 0.058377478271722794
+Segment (229, 101, 1, 1): Best match = 0, Score = 0.0
+Segment (239, 94, 4, 7): Best match = Н, Score = 0.006300751119852066
+Segment (244, 94, 4, 7): Best match = С, Score = 0.09643729776144028
+Segment (251, 16, 86, 8): Best match = К, Score = 0.1729566901922226
+Segment (254, 94, 18, 7): Best match = Х, Score = 0.12273473292589188
+Segment (305, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (307, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (309, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (310, 25, 3, 2): Best match = Т, Score = -0.07528745383024216
+Segment (312, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (313, 28, 1, 1): Best match = 0, Score = 0.0
+Segment (314, 14, 2, 1): Best match = 0, Score = 0.0
+Segment (315, 90, 1, 1): Best match = 0, Score = 0.0
+Segment (318, 14, 2, 1): Best match = 0, Score = 0.0
+Segment (321, 12, 10, 3): Best match = 9, Score = 0.21854247152805328
+Segment (324, 20, 1, 1): Best match = 0, Score = 0.0
+Segment (331, 19, 2, 1): Best match = 0, Score = 0.0
+Segment (332, 12, 5, 1): Best match = 0, Score = 0.0
+Файл: Е008ЕЕ77.jpg
+Распознанный текст: ТСКМ0О00ТТ
+Ожидаемый текст: Е008ЕЕ77
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0918 секунд
+Время предобработки: 0.0389 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 8, 162, 46): Best match = Е, Score = 0.17020422220230103
+Segment (0, 0, 162, 9): Best match = Т, Score = 0.01576593704521656
+Segment (9, 20, 144, 20): Best match = М, Score = 0.13449417054653168
+Segment (148, 7, 1, 1): Best match = 0, Score = 0.0
+Файл: Е015КА193.jpg
+Распознанный текст: ЕТМ0
+Ожидаемый текст: Е015КА193
+Точность распознавания: 25.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1127 секунд
+Время предобработки: 0.0090 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 54, 15, 5): Best match = М, Score = 0.2246851623058319
+Segment (0, 17, 1, 1): Best match = 0, Score = 0.0
+Segment (0, 10, 11, 4): Best match = 7, Score = 0.004381888546049595
+Segment (0, 0, 175, 7): Best match = В, Score = 0.18795455992221832
+Segment (3, 51, 4, 3): Best match = 1, Score = 0.17991241812705994
+Segment (6, 16, 149, 32): Best match = Р, Score = 0.011905212886631489
+Segment (8, 53, 1, 1): Best match = 0, Score = 0.0
+Segment (23, 51, 3, 1): Best match = 0, Score = 0.0
+Segment (25, 49, 1, 1): Best match = 0, Score = 0.0
+Segment (31, 50, 2, 2): Best match = А, Score = 0.20003238320350647
+Segment (32, 58, 1, 1): Best match = 0, Score = 0.0
+Segment (36, 51, 2, 1): Best match = 0, Score = 0.0
+Segment (47, 54, 85, 5): Best match = В, Score = 0.2927711606025696
+Segment (65, 51, 1, 1): Best match = 0, Score = 0.0
+Segment (73, 51, 1, 1): Best match = 0, Score = 0.0
+Segment (90, 50, 1, 1): Best match = 0, Score = 0.0
+Segment (93, 49, 1, 3): Best match = 0, Score = 0.0
+Segment (99, 48, 1, 1): Best match = 0, Score = 0.0
+Segment (101, 50, 2, 1): Best match = 0, Score = 0.0
+Segment (102, 48, 1, 1): Best match = 0, Score = 0.0
+Segment (133, 48, 42, 11): Best match = 3, Score = 0.17105405032634735
+Segment (133, 12, 1, 1): Best match = 0, Score = 0.0
+Segment (135, 49, 6, 3): Best match = М, Score = 0.22859469056129456
+Segment (136, 10, 3, 1): Best match = 0, Score = 0.0
+Segment (148, 12, 1, 1): Best match = 0, Score = 0.0
+Segment (152, 12, 3, 1): Best match = 0, Score = 0.0
+Segment (156, 9, 19, 4): Best match = М, Score = 0.33488571643829346
+Segment (157, 48, 1, 1): Best match = 0, Score = 0.0
+Segment (157, 35, 1, 1): Best match = 0, Score = 0.0
+Segment (157, 15, 18, 32): Best match = Р, Score = 0.22253426909446716
+Файл: Е777ЕЕ47.jpg
+Распознанный текст: М07В1РА00В
+Ожидаемый текст: Е777ЕЕ47
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0748 секунд
+Время предобработки: 0.0110 секунд
+Время постобработки: 0.0000 секунд
+
+Номерная пластина не найдена в изображении И8661ЛГ.jpg
+Segment (0, 28, 14, 55): Best match = А, Score = 0.2440301775932312
+Segment (0, 0, 249, 24): Best match = О, Score = 0.005353031679987907
+Segment (15, 21, 1, 1): Best match = 0, Score = 0.0
+Segment (16, 24, 37, 4): Best match = С, Score = 0.15981106460094452
+Segment (16, 18, 160, 59): Best match = 4, Score = 0.03529350459575653
+Segment (22, 0, 2, 2): Best match = 0, Score = 0.0
+Segment (33, 4, 1, 1): Best match = 0, Score = 0.0
+Segment (34, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (36, 1, 3, 4): Best match = Е, Score = 0.2841731905937195
+Segment (40, 81, 1, 1): Best match = 0, Score = 0.0
+Segment (43, 82, 1, 1): Best match = 0, Score = 0.0
+Segment (44, 0, 7, 2): Best match = Р, Score = 0.03777945414185524
+Segment (48, 19, 11, 1): Best match = 0, Score = 0.0
+Segment (54, 0, 1, 3): Best match = 0, Score = 0.0
+Segment (61, 18, 6, 3): Best match = Е, Score = 0.2649478614330292
+Segment (74, 80, 1, 1): Best match = 0, Score = 0.0
+Segment (76, 22, 4, 1): Best match = 0, Score = 0.0
+Segment (85, 80, 4, 2): Best match = Р, Score = 0.09714046865701675
+Segment (85, 77, 3, 1): Best match = 0, Score = 0.0
+Segment (86, 14, 94, 8): Best match = 4, Score = 0.14174892008304596
+Segment (89, 76, 3, 1): Best match = 0, Score = 0.0
+Segment (95, 14, 15, 2): Best match = А, Score = 0.2720712423324585
+Segment (97, 12, 1, 1): Best match = 0, Score = 0.0
+Segment (111, 78, 32, 4): Best match = 1, Score = 0.20900167524814606
+Segment (112, 14, 11, 1): Best match = 0, Score = 0.0
+Segment (121, 11, 3, 1): Best match = 0, Score = 0.0
+Segment (122, 82, 3, 1): Best match = 0, Score = 0.0
+Segment (124, 13, 10, 1): Best match = 0, Score = 0.0
+Segment (126, 70, 123, 13): Best match = М, Score = 0.20994146168231964
+Segment (137, 10, 24, 3): Best match = 7, Score = 0.2715508043766022
+Segment (138, 9, 1, 2): Best match = 0, Score = 0.0
+Segment (141, 70, 2, 1): Best match = 0, Score = 0.0
+Segment (143, 10, 1, 1): Best match = 0, Score = 0.0
+Segment (144, 77, 18, 2): Best match = 4, Score = 0.24572573602199554
+Segment (170, 76, 1, 1): Best match = 0, Score = 0.0
+Segment (172, 7, 2, 2): Best match = 0, Score = 0.0
+Segment (173, 11, 57, 55): Best match = М, Score = 0.07549945265054703
+Segment (174, 76, 1, 1): Best match = 0, Score = 0.0
+Segment (177, 76, 1, 1): Best match = 0, Score = 0.0
+Segment (227, 3, 22, 70): Best match = 1, Score = 0.0845368281006813
+Segment (233, 72, 1, 1): Best match = 0, Score = 0.0
+Файл: К034ВЕ29.jpg
+Распознанный текст: АО0С4Е00Р0
+Ожидаемый текст: К034ВЕ29
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1765 секунд
+Время предобработки: 0.0209 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 332, 111): Best match = 2, Score = 0.07409819960594177
+Segment (0, 0, 23, 4): Best match = Н, Score = 0.08390133082866669
+Segment (99, 0, 3, 1): Best match = 0, Score = 0.0
+Файл: К554НС46.jpg
+Распознанный текст: 2Н0
+Ожидаемый текст: К554НС46
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1716 секунд
+Время предобработки: 0.0379 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 71, 299, 29): Best match = С, Score = -0.013324138708412647
+Segment (0, 0, 299, 77): Best match = О, Score = 0.046309392899274826
+Segment (34, 68, 25, 17): Best match = О, Score = -0.025245996192097664
+Segment (36, 58, 3, 17): Best match = 1, Score = 0.4096311926841736
+Segment (37, 39, 1, 5): Best match = 0, Score = 0.0
+Segment (39, 25, 164, 53): Best match = 1, Score = 0.07212121784687042
+Segment (60, 84, 1, 1): Best match = 0, Score = 0.0
+Segment (61, 76, 35, 9): Best match = А, Score = 0.1353347897529602
+Segment (99, 77, 30, 10): Best match = Р, Score = 0.07696780562400818
+Segment (99, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (132, 77, 40, 10): Best match = 4, Score = 0.10794040560722351
+Segment (177, 79, 9, 8): Best match = М, Score = 0.21583309769630432
+Segment (189, 28, 87, 61): Best match = 0, Score = 0.029670024290680885
+Segment (204, 46, 1, 3): Best match = 0, Score = 0.0
+Segment (204, 42, 1, 3): Best match = 0, Score = 0.0
+Segment (212, 79, 10, 9): Best match = Н, Score = 0.1632646769285202
+Segment (222, 80, 5, 8): Best match = Т, Score = 0.1986747831106186
+Segment (227, 80, 15, 8): Best match = Н, Score = 0.23233695328235626
+Segment (243, 80, 4, 8): Best match = 8, Score = 0.3168684244155884
+Segment (247, 80, 4, 8): Best match = Т, Score = 0.1700127273797989
+Segment (255, 77, 24, 14): Best match = М, Score = 0.03698761388659477
+Segment (278, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (295, 41, 4, 7): Best match = Р, Score = 0.07825588434934616
+Файл: К911АТ777.jpg
+Распознанный текст: СОО1010АР0
+Ожидаемый текст: К911АТ777
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1107 секунд
+Время предобработки: 0.0299 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 36, 5, 3): Best match = М, Score = 0.22093963623046875
+Segment (0, 26, 4, 9): Best match = Р, Score = 0.2462346851825714
+Segment (0, 18, 1, 2): Best match = 0, Score = 0.0
+Segment (0, 7, 174, 51): Best match = Р, Score = 0.03242651745676994
+Segment (0, 3, 4, 2): Best match = В, Score = 0.20496924221515656
+Segment (0, 0, 9, 4): Best match = О, Score = 0.03567158430814743
+Segment (1, 40, 1, 1): Best match = 0, Score = 0.0
+Segment (11, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (12, 0, 162, 12): Best match = В, Score = 0.22406436502933502
+Segment (13, 50, 1, 1): Best match = 0, Score = 0.0
+Segment (23, 52, 29, 5): Best match = Н, Score = 0.2774292230606079
+Segment (59, 56, 5, 2): Best match = 0, Score = 0.0
+Segment (65, 55, 3, 1): Best match = 0, Score = 0.0
+Segment (100, 54, 5, 3): Best match = В, Score = 0.21750323474407196
+Segment (103, 2, 2, 1): Best match = 0, Score = 0.0
+Segment (161, 29, 13, 22): Best match = 4, Score = 0.19298997521400452
+Segment (164, 50, 10, 8): Best match = М, Score = 0.30102822184562683
+Segment (167, 23, 1, 1): Best match = 0, Score = 0.0
+Segment (171, 0, 3, 5): Best match = Т, Score = -0.05061003565788269
+Файл: К932ОТ54.jpg
+Распознанный текст: МР0РВО00В0
+Ожидаемый текст: К932ОТ54
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1107 секунд
+Время предобработки: 0.0110 секунд
+Время постобработки: 0.0000 секунд
+
+Номерная пластина не найдена в изображении Л4535МН.jpg
+Segment (0, 9, 170, 48): Best match = М, Score = 0.19560348987579346
+Segment (0, 0, 170, 19): Best match = 7, Score = -0.06654637306928635
+Segment (138, 23, 2, 1): Best match = 0, Score = 0.0
+Segment (162, 27, 1, 1): Best match = 0, Score = 0.0
+Файл: Л6819МУ.jpg
+Распознанный текст: М700
+Ожидаемый текст: Л6819МУ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1097 секунд
+Время предобработки: 0.0110 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 29, 16, 19): Best match = А, Score = 0.1867547482252121
+Segment (0, 0, 140, 42): Best match = 4, Score = 0.18718495965003967
+Segment (61, 8, 1, 2): Best match = 0, Score = 0.0
+Segment (61, 5, 1, 1): Best match = 0, Score = 0.0
+Segment (64, 5, 2, 1): Best match = 0, Score = 0.0
+Segment (68, 4, 2, 1): Best match = 0, Score = 0.0
+Segment (68, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (71, 8, 1, 2): Best match = 0, Score = 0.0
+Segment (72, 3, 2, 3): Best match = А, Score = 0.15701432526111603
+Segment (73, 7, 1, 1): Best match = 0, Score = 0.0
+Segment (75, 3, 3, 3): Best match = У, Score = 0.2986728250980377
+Segment (79, 4, 2, 2): Best match = 0, Score = 0.0
+Segment (84, 10, 2, 1): Best match = 0, Score = 0.0
+Segment (87, 10, 1, 1): Best match = 0, Score = 0.0
+Segment (89, 7, 1, 2): Best match = 0, Score = 0.0
+Segment (90, 8, 3, 5): Best match = Т, Score = 0.2378540188074112
+Segment (98, 14, 1, 2): Best match = 0, Score = 0.0
+Segment (105, 14, 1, 1): Best match = 0, Score = 0.0
+Segment (111, 11, 2, 1): Best match = 0, Score = 0.0
+Segment (112, 16, 1, 1): Best match = 0, Score = 0.0
+Segment (131, 34, 13, 14): Best match = 4, Score = 0.23380529880523682
+Файл: М372НА102.jpg
+Распознанный текст: А4А0УТ4
+Ожидаемый текст: М372НА102
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.2334 секунд
+Время предобработки: 0.0070 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 21, 190, 61): Best match = Е, Score = 0.0802549347281456
+Segment (0, 0, 245, 16): Best match = Т, Score = 0.06021185219287872
+Segment (9, 70, 8, 2): Best match = А, Score = 0.31522491574287415
+Segment (12, 17, 153, 50): Best match = Т, Score = 0.05510282143950462
+Segment (18, 64, 12, 8): Best match = Р, Score = 0.256908655166626
+Segment (29, 72, 1, 1): Best match = 0, Score = 0.0
+Segment (31, 72, 25, 2): Best match = Т, Score = -0.05007742717862129
+Segment (59, 73, 2, 1): Best match = 0, Score = 0.0
+Segment (62, 73, 8, 1): Best match = 0, Score = 0.0
+Segment (71, 73, 1, 1): Best match = 0, Score = 0.0
+Segment (91, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (93, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (96, 74, 4, 1): Best match = 0, Score = 0.0
+Segment (103, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (113, 0, 4, 1): Best match = 0, Score = 0.0
+Segment (138, 76, 2, 1): Best match = 0, Score = 0.0
+Segment (140, 19, 2, 1): Best match = 0, Score = 0.0
+Segment (141, 62, 87, 18): Best match = 4, Score = -0.06452535837888718
+Segment (161, 22, 68, 48): Best match = 7, Score = 0.1465633511543274
+Segment (218, 5, 2, 1): Best match = 0, Score = 0.0
+Segment (221, 5, 2, 1): Best match = 0, Score = 0.0
+Segment (231, 21, 14, 61): Best match = 4, Score = 0.2071233093738556
+Файл: М555КА777.jpg
+Распознанный текст: ЕТАТР0Т470
+Ожидаемый текст: М555КА777
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1077 секунд
+Время предобработки: 0.0199 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 47, 29, 3): Best match = М, Score = 0.29493391513824463
+Segment (0, 0, 149, 45): Best match = 4, Score = 0.12228161096572876
+Segment (19, 12, 113, 32): Best match = Н, Score = 0.12547248601913452
+Segment (21, 8, 2, 1): Best match = 0, Score = 0.0
+Segment (22, 43, 7, 4): Best match = М, Score = 0.3705531060695648
+Segment (28, 6, 1, 1): Best match = 0, Score = 0.0
+Segment (30, 48, 34, 2): Best match = М, Score = 0.3543561100959778
+Segment (30, 40, 1, 1): Best match = 0, Score = 0.0
+Segment (33, 46, 13, 1): Best match = 0, Score = 0.0
+Segment (38, 41, 1, 1): Best match = 0, Score = 0.0
+Segment (41, 41, 1, 1): Best match = 0, Score = 0.0
+Segment (66, 10, 4, 1): Best match = 0, Score = 0.0
+Segment (102, 11, 1, 1): Best match = 0, Score = 0.0
+Segment (103, 48, 4, 2): Best match = Т, Score = -0.13524934649467468
+Segment (104, 11, 1, 1): Best match = 0, Score = 0.0
+Segment (108, 11, 1, 1): Best match = 0, Score = 0.0
+Segment (109, 8, 40, 42): Best match = О, Score = 0.08966405689716339
+Segment (110, 9, 3, 1): Best match = 0, Score = 0.0
+Segment (111, 11, 1, 1): Best match = 0, Score = 0.0
+Segment (118, 12, 1, 1): Best match = 0, Score = 0.0
+Segment (121, 12, 1, 1): Best match = 0, Score = 0.0
+Segment (125, 11, 1, 1): Best match = 0, Score = 0.0
+Segment (128, 12, 1, 1): Best match = 0, Score = 0.0
+Файл: Н717НВ777.jpg
+Распознанный текст: М4Н0М0МТ00
+Ожидаемый текст: Н717НВ777
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0429 секунд
+Время предобработки: 0.0070 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 465, 155): Best match = 2, Score = 0.06596363335847855
+Segment (0, 0, 217, 23): Best match = Р, Score = 0.10964173823595047
+Segment (1, 31, 1, 2): Best match = 0, Score = 0.0
+Segment (9, 56, 3, 4): Best match = Т, Score = 0.2926168739795685
+Segment (10, 42, 2, 2): Best match = 0, Score = 0.0
+Segment (10, 31, 15, 9): Best match = Н, Score = 0.1524541825056076
+Segment (12, 106, 2, 3): Best match = 1, Score = 0.10320637375116348
+Segment (15, 41, 291, 78): Best match = Н, Score = 0.10938750952482224
+Segment (27, 34, 3, 4): Best match = Р, Score = 0.13986213505268097
+Segment (33, 33, 1, 1): Best match = 0, Score = 0.0
+Segment (37, 31, 6, 6): Best match = 9, Score = 0.2999332547187805
+Segment (40, 124, 1, 1): Best match = 0, Score = 0.0
+Segment (45, 35, 3, 3): Best match = Т, Score = 0.20819562673568726
+Segment (46, 31, 2, 3): Best match = 0, Score = 0.0
+Segment (49, 31, 2, 3): Best match = М, Score = 0.24678108096122742
+Segment (52, 32, 5, 4): Best match = Н, Score = 0.31304478645324707
+Segment (58, 31, 3, 5): Best match = К, Score = 0.2098482996225357
+Segment (63, 32, 4, 4): Best match = 8, Score = 0.3326594829559326
+Segment (66, 34, 5, 4): Best match = У, Score = 0.19704006612300873
+Segment (68, 29, 53, 9): Best match = Р, Score = 0.22318117320537567
+Segment (80, 29, 1, 2): Best match = 0, Score = 0.0
+Segment (89, 124, 3, 2): Best match = А, Score = 0.21809493005275726
+Segment (195, 36, 2, 1): Best match = 0, Score = 0.0
+Segment (305, 41, 91, 78): Best match = Т, Score = 0.028593195602297783
+Segment (374, 141, 1, 2): Best match = 0, Score = 0.0
+Segment (396, 133, 1, 1): Best match = 0, Score = 0.0
+Segment (396, 130, 2, 2): Best match = 0, Score = 0.0
+Segment (448, 135, 17, 20): Best match = 3, Score = 0.09024349600076675
+Segment (451, 146, 1, 1): Best match = 0, Score = 0.0
+Файл: Н757УС37.jpg
+Распознанный текст: 2Р0Т0Н1НР0
+Ожидаемый текст: Н757УС37
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.2164 секунд
+Время предобработки: 0.0748 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 84, 10, 7): Best match = А, Score = 0.2754021883010864
+Segment (0, 73, 27, 12): Best match = 3, Score = 0.28030911087989807
+Segment (0, 15, 272, 65): Best match = А, Score = 0.0532970055937767
+Segment (0, 0, 272, 15): Best match = 1, Score = 0.0691019743680954
+Segment (24, 79, 248, 12): Best match = М, Score = 0.1762825846672058
+Segment (32, 10, 1, 1): Best match = 0, Score = 0.0
+Segment (61, 12, 9, 1): Best match = 0, Score = 0.0
+Segment (81, 12, 2, 1): Best match = 0, Score = 0.0
+Segment (90, 77, 19, 2): Best match = 1, Score = 0.12715545296669006
+Segment (104, 13, 1, 1): Best match = 0, Score = 0.0
+Segment (113, 78, 1, 1): Best match = 0, Score = 0.0
+Segment (115, 78, 1, 1): Best match = 0, Score = 0.0
+Segment (132, 78, 1, 1): Best match = 0, Score = 0.0
+Segment (138, 83, 1, 1): Best match = 0, Score = 0.0
+Segment (139, 79, 1, 1): Best match = 0, Score = 0.0
+Segment (141, 79, 1, 1): Best match = 0, Score = 0.0
+Segment (149, 79, 2, 1): Best match = 0, Score = 0.0
+Segment (167, 84, 1, 1): Best match = 0, Score = 0.0
+Segment (174, 84, 1, 1): Best match = 0, Score = 0.0
+Segment (178, 84, 1, 1): Best match = 0, Score = 0.0
+Segment (191, 85, 2, 1): Best match = 0, Score = 0.0
+Segment (195, 85, 1, 1): Best match = 0, Score = 0.0
+Segment (260, 71, 4, 2): Best match = 3, Score = 0.08725910633802414
+Segment (262, 20, 4, 3): Best match = К, Score = 0.2932266891002655
+Segment (263, 16, 2, 1): Best match = 0, Score = 0.0
+Segment (269, 15, 1, 1): Best match = 0, Score = 0.0
+Файл: О002ОО21.jpg
+Распознанный текст: А3А1М13К00
+Ожидаемый текст: О002ОО21
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1117 секунд
+Время предобработки: 0.0259 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 23, 6, 2): Best match = М, Score = 0.22745689749717712
+Segment (0, 0, 3, 4): Best match = А, Score = 0.2229170948266983
+Segment (1, 36, 2, 1): Best match = 0, Score = 0.0
+Segment (1, 7, 110, 30): Best match = Р, Score = 0.1803252249956131
+Segment (6, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (12, 0, 99, 4): Best match = 9, Score = 0.16095669567584991
+Segment (88, 7, 2, 1): Best match = 0, Score = 0.0
+Segment (107, 11, 4, 11): Best match = Р, Score = 0.0857497900724411
+Файл: О101ОО11.jpg
+Распознанный текст: МА0Р090Р
+Ожидаемый текст: О101ОО11
+Точность распознавания: 12.50%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0788 секунд
+Время предобработки: 0.0050 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 8, 62, 10): Best match = Р, Score = 0.08497808128595352
+Segment (4, 17, 1, 1): Best match = 0, Score = 0.0
+Segment (5, 1, 5, 2): Best match = Н, Score = 0.2156582623720169
+Segment (8, 17, 1, 1): Best match = 0, Score = 0.0
+Segment (12, 1, 7, 2): Best match = М, Score = 0.22746041417121887
+Segment (20, 0, 42, 10): Best match = С, Score = -0.06698872894048691
+Файл: О496ХВ777.jpg
+Распознанный текст: Р0Н0МС
+Ожидаемый текст: О496ХВ777
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1586 секунд
+Время предобработки: 0.0010 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (2, 3, 70, 22): Best match = Р, Score = 0.10913178324699402
+Segment (24, 23, 1, 1): Best match = 0, Score = 0.0
+Segment (28, 0, 9, 3): Best match = Т, Score = 0.2709677219390869
+Файл: О540РК177.jpg
+Распознанный текст: Р0Т
+Ожидаемый текст: О540РК177
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1018 секунд
+Время предобработки: 0.0020 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 151, 51): Best match = М, Score = 0.14720186591148376
+Файл: О686НЕ102.jpg
+Распознанный текст: М
+Ожидаемый текст: О686НЕ102
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1765 секунд
+Время предобработки: 0.0089 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 195, 65): Best match = У, Score = -0.022874975576996803
+Segment (7, 8, 168, 46): Best match = 4, Score = 0.006007364019751549
+Segment (42, 54, 4, 1): Best match = 0, Score = 0.0
+Segment (53, 53, 1, 1): Best match = 0, Score = 0.0
+Segment (65, 52, 3, 1): Best match = 0, Score = 0.0
+Segment (94, 50, 1, 1): Best match = 0, Score = 0.0
+Segment (106, 49, 1, 1): Best match = 0, Score = 0.0
+Segment (129, 63, 11, 2): Best match = М, Score = 0.27937695384025574
+Segment (131, 47, 1, 1): Best match = 0, Score = 0.0
+Segment (138, 46, 8, 1): Best match = 0, Score = 0.0
+Segment (154, 45, 4, 1): Best match = 0, Score = 0.0
+Segment (164, 44, 2, 1): Best match = 0, Score = 0.0
+Segment (187, 0, 1, 2): Best match = 0, Score = 0.0
+Segment (188, 3, 1, 1): Best match = 0, Score = 0.0
+Segment (192, 32, 3, 12): Best match = Е, Score = 0.14913451671600342
+Файл: Р0307ОМ.jpg
+Распознанный текст: У4МЕ
+Ожидаемый текст: Р0307ОМ
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0519 секунд
+Время предобработки: 0.0130 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 69, 48): Best match = Н, Score = 0.23707418143749237
+Segment (11, 6, 115, 42): Best match = 1, Score = 0.09004285931587219
+Segment (23, 15, 1, 1): Best match = 0, Score = 0.0
+Segment (37, 14, 1, 1): Best match = 0, Score = 0.0
+Segment (57, 12, 4, 1): Best match = 0, Score = 0.0
+Segment (81, 0, 1, 1): Best match = 0, Score = 0.0
+Segment (86, 2, 2, 2): Best match = М, Score = 0.18800128996372223
+Segment (99, 8, 4, 1): Best match = 0, Score = 0.0
+Segment (99, 0, 45, 48): Best match = 1, Score = 0.04886552691459656
+Segment (111, 7, 1, 1): Best match = 0, Score = 0.0
+Segment (125, 3, 2, 2): Best match = 0, Score = 0.0
+Segment (128, 1, 1, 1): Best match = 0, Score = 0.0
+Файл: Р077УВ76.jpg
+Распознанный текст: Н1М01
+Ожидаемый текст: Р077УВ76
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0379 секунд
+Время предобработки: 0.0070 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 17, 147, 40): Best match = С, Score = 0.07339204847812653
+Segment (0, 16, 217, 56): Best match = Е, Score = 0.09032998234033585
+Segment (0, 0, 217, 12): Best match = Т, Score = 0.012818118557333946
+Segment (4, 58, 69, 1): Best match = 0, Score = 0.0
+Segment (25, 61, 2, 1): Best match = 0, Score = 0.0
+Segment (28, 61, 1, 1): Best match = 0, Score = 0.0
+Segment (34, 61, 2, 1): Best match = 0, Score = 0.0
+Segment (37, 61, 1, 1): Best match = 0, Score = 0.0
+Segment (40, 61, 5, 1): Best match = 0, Score = 0.0
+Segment (75, 58, 81, 1): Best match = 0, Score = 0.0
+Segment (109, 35, 5, 8): Best match = В, Score = 0.3724803626537323
+Segment (129, 30, 7, 8): Best match = Т, Score = 0.011683039367198944
+Segment (148, 17, 46, 40): Best match = М, Score = 0.020805904641747475
+Segment (159, 27, 2, 2): Best match = 0, Score = 0.0
+Segment (165, 58, 21, 1): Best match = 0, Score = 0.0
+Segment (172, 32, 7, 8): Best match = Т, Score = 0.22023487091064453
+Segment (173, 24, 5, 5): Best match = Т, Score = 0.180889293551445
+Segment (189, 35, 2, 2): Best match = 3, Score = 0.040915265679359436
+Segment (192, 58, 1, 1): Best match = 0, Score = 0.0
+Segment (192, 39, 1, 4): Best match = 0, Score = 0.0
+Segment (194, 16, 3, 4): Best match = 4, Score = 0.31104886531829834
+Файл: Р332АК18.jpg
+Распознанный текст: СЕТВТМ00ТТ
+Ожидаемый текст: Р332АК18
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1167 секунд
+Время предобработки: 0.0160 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 89, 27, 11): Best match = А, Score = 0.23285196721553802
+Segment (0, 0, 300, 100): Best match = Р, Score = 0.06270328164100647
+Segment (12, 31, 1, 1): Best match = 0, Score = 0.0
+Segment (12, 24, 4, 5): Best match = Р, Score = 0.16995947062969208
+Segment (13, 25, 265, 58): Best match = М, Score = 0.03621309995651245
+Segment (27, 94, 1, 1): Best match = 0, Score = 0.0
+Segment (104, 96, 11, 4): Best match = А, Score = 0.3397371172904968
+Segment (119, 99, 2, 1): Best match = 0, Score = 0.0
+Segment (123, 98, 1, 1): Best match = 0, Score = 0.0
+Segment (128, 99, 2, 1): Best match = 0, Score = 0.0
+Segment (131, 99, 1, 1): Best match = 0, Score = 0.0
+Segment (150, 98, 1, 2): Best match = 0, Score = 0.0
+Segment (161, 99, 1, 1): Best match = 0, Score = 0.0
+Segment (194, 98, 4, 2): Best match = Р, Score = 0.13350634276866913
+Segment (194, 95, 1, 1): Best match = 0, Score = 0.0
+Segment (201, 98, 2, 1): Best match = 0, Score = 0.0
+Segment (254, 86, 3, 5): Best match = 4, Score = 0.21029910445213318
+Segment (276, 28, 5, 7): Best match = 7, Score = 0.031676724553108215
+Segment (279, 26, 1, 1): Best match = 0, Score = 0.0
+Segment (282, 27, 1, 1): Best match = 0, Score = 0.0
+Segment (283, 76, 1, 2): Best match = 0, Score = 0.0
+Файл: Р700РР06.jpg
+Распознанный текст: АР0РМ0АР00
+Ожидаемый текст: Р700РР06
+Точность распознавания: 10.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1047 секунд
+Время предобработки: 0.0299 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 36, 60, 15): Best match = 6, Score = 0.113630510866642
+Segment (0, 16, 5, 14): Best match = А, Score = 0.2607644498348236
+Segment (9, 0, 137, 49): Best match = У, Score = 0.017935173586010933
+Segment (65, 49, 5, 2): Best match = Т, Score = 0.22309474647045135
+Segment (80, 50, 1, 1): Best match = 0, Score = 0.0
+Segment (80, 0, 10, 1): Best match = 0, Score = 0.0
+Segment (146, 0, 6, 4): Best match = Т, Score = 0.04747287929058075
+Файл: С624СС163.jpg
+Распознанный текст: 6АУТ00Т
+Ожидаемый текст: С624СС163
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1326 секунд
+Время предобработки: 0.0080 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 247, 82): Best match = Р, Score = 0.043508514761924744
+Segment (20, 19, 214, 49): Best match = 7, Score = 0.056853946298360825
+Segment (27, 68, 1, 1): Best match = 0, Score = 0.0
+Segment (30, 62, 36, 7): Best match = Н, Score = 0.17133021354675293
+Segment (82, 66, 7, 5): Best match = 9, Score = 0.23075492680072784
+Segment (86, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (107, 68, 33, 6): Best match = К, Score = 0.19621321558952332
+Segment (114, 16, 1, 1): Best match = 0, Score = 0.0
+Segment (118, 15, 6, 2): Best match = М, Score = 0.24950917065143585
+Segment (143, 74, 1, 1): Best match = 0, Score = 0.0
+Segment (170, 69, 7, 6): Best match = В, Score = 0.30644726753234863
+Segment (178, 70, 20, 6): Best match = Р, Score = 0.019796188920736313
+Segment (199, 69, 30, 7): Best match = М, Score = 0.2255811244249344
+Segment (230, 76, 1, 1): Best match = 0, Score = 0.0
+Segment (230, 66, 17, 16): Best match = А, Score = 0.31391701102256775
+Segment (232, 75, 1, 1): Best match = 0, Score = 0.0
+Segment (239, 67, 1, 1): Best match = 0, Score = 0.0
+Segment (239, 60, 8, 4): Best match = М, Score = 0.23288112878799438
+Файл: Т064АН124.jpg
+Распознанный текст: Р70Н90К0М0
+Ожидаемый текст: Т064АН124
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0838 секунд
+Время предобработки: 0.0199 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 19, 301, 81): Best match = Е, Score = 0.10700147598981857
+Segment (0, 0, 301, 22): Best match = Р, Score = 0.05114451423287392
+Segment (0, 0, 2, 1): Best match = 0, Score = 0.0
+Segment (13, 33, 1, 10): Best match = 0, Score = 0.0
+Segment (14, 45, 1, 7): Best match = 0, Score = 0.0
+Segment (15, 58, 1, 6): Best match = 0, Score = 0.0
+Segment (15, 25, 200, 60): Best match = Н, Score = 0.09619633108377457
+Segment (16, 69, 1, 6): Best match = 0, Score = 0.0
+Segment (17, 79, 1, 2): Best match = 0, Score = 0.0
+Segment (56, 86, 9, 10): Best match = М, Score = 0.19662058353424072
+Segment (66, 86, 7, 9): Best match = Р, Score = 0.3203871250152588
+Segment (73, 23, 1, 1): Best match = 0, Score = 0.0
+Segment (74, 86, 6, 8): Best match = Н, Score = 0.3647288382053375
+Segment (81, 86, 5, 9): Best match = 7, Score = 0.16256959736347198
+Segment (81, 22, 1, 1): Best match = 0, Score = 0.0
+Segment (85, 91, 2, 3): Best match = М, Score = 0.24678108096122742
+Segment (88, 85, 7, 9): Best match = Н, Score = 0.39551857113838196
+Segment (89, 22, 1, 1): Best match = 0, Score = 0.0
+Segment (96, 85, 7, 9): Best match = Н, Score = 0.28543245792388916
+Segment (103, 85, 1, 2): Best match = 0, Score = 0.0
+Segment (106, 85, 2, 9): Best match = Р, Score = 0.17370110750198364
+Segment (109, 85, 1, 2): Best match = 0, Score = 0.0
+Segment (111, 84, 3, 9): Best match = Т, Score = 0.20232954621315002
+Segment (116, 21, 1, 1): Best match = 0, Score = 0.0
+Segment (124, 22, 1, 1): Best match = 0, Score = 0.0
+Segment (126, 21, 20, 2): Best match = Р, Score = 0.09209898114204407
+Segment (131, 84, 8, 8): Best match = М, Score = 0.2446439117193222
+Segment (140, 84, 7, 8): Best match = М, Score = 0.13621598482131958
+Segment (148, 83, 6, 8): Best match = М, Score = 0.08881919085979462
+Segment (152, 83, 2, 3): Best match = М, Score = 0.25085124373435974
+Segment (153, 19, 9, 2): Best match = А, Score = 0.3482532501220703
+Segment (156, 83, 6, 8): Best match = Р, Score = 0.1735997051000595
+Segment (163, 83, 6, 8): Best match = В, Score = 0.26619502902030945
+Segment (171, 82, 6, 8): Best match = Р, Score = 0.26807162165641785
+Segment (193, 82, 6, 8): Best match = 4, Score = 0.2392771989107132
+Segment (200, 82, 5, 7): Best match = 4, Score = 0.2855249345302582
+Segment (200, 82, 1, 3): Best match = 0, Score = 0.0
+Segment (206, 82, 5, 7): Best match = 4, Score = 0.2271943986415863
+Segment (212, 85, 3, 2): Best match = 0, Score = 0.0
+Segment (212, 23, 64, 54): Best match = Н, Score = 0.024098901078104973
+Segment (216, 81, 5, 8): Best match = 4, Score = 0.17785190045833588
+Segment (223, 81, 5, 8): Best match = 4, Score = 0.23149225115776062
+Segment (229, 84, 2, 2): Best match = М, Score = 0.18800128996372223
+Segment (233, 81, 5, 8): Best match = 4, Score = 0.15179108083248138
+Segment (239, 80, 5, 8): Best match = У, Score = 0.2298530638217926
+Segment (251, 80, 6, 8): Best match = 9, Score = 0.2948189079761505
+Файл: У727НН16.jpg
+Распознанный текст: ЕРН00МР0Н7
+Ожидаемый текст: У727НН16
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0888 секунд
+Время предобработки: 0.0319 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 3, 143, 43): Best match = Т, Score = 0.047348055988550186
+Segment (26, 16, 98, 22): Best match = 4, Score = 0.0445304773747921
+Segment (28, 46, 14, 2): Best match = Р, Score = 0.03524810075759888
+Segment (34, 38, 3, 2): Best match = 4, Score = 0.2344028502702713
+Segment (39, 38, 6, 3): Best match = В, Score = 0.42609143257141113
+Segment (43, 46, 3, 1): Best match = 0, Score = 0.0
+Segment (48, 46, 15, 2): Best match = Н, Score = 0.09552718698978424
+Segment (68, 39, 16, 3): Best match = Р, Score = 0.08983505517244339
+Segment (92, 40, 14, 2): Best match = Т, Score = 0.11955875903367996
+Segment (107, 40, 6, 2): Best match = 7, Score = 0.03344370797276497
+Segment (114, 40, 3, 2): Best match = 4, Score = 0.2344028502702713
+Файл: Х001ХХ166.jpg
+Распознанный текст: Т4Р4В0НРТ7
+Ожидаемый текст: Х001ХХ166
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.0489 секунд
+Время предобработки: 0.0070 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 52, 36): Best match = 4, Score = 0.10542894899845123
+Segment (17, 4, 83, 31): Best match = Р, Score = 0.15703237056732178
+Segment (28, 31, 15, 3): Best match = М, Score = 0.09076570719480515
+Segment (92, 30, 1, 2): Best match = 0, Score = 0.0
+Segment (95, 30, 2, 1): Best match = 0, Score = 0.0
+Segment (96, 25, 12, 11): Best match = В, Score = 0.31688371300697327
+Segment (102, 4, 1, 1): Best match = 0, Score = 0.0
+Segment (103, 0, 5, 8): Best match = 1, Score = 0.1256447732448578
+Segment (104, 19, 4, 4): Best match = 4, Score = 0.20913517475128174
+Segment (106, 15, 2, 3): Best match = 1, Score = 0.10744257271289825
+Файл: Х069ХХ96.jpg
+Распознанный текст: 4РМ00В0141
+Ожидаемый текст: Х069ХХ96
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1397 секунд
+Время предобработки: 0.0040 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 281, 94): Best match = 2, Score = 0.030102301388978958
+Segment (19, 24, 1, 1): Best match = 0, Score = 0.0
+Segment (21, 24, 55, 35): Best match = Н, Score = 0.28876009583473206
+Segment (46, 19, 1, 1): Best match = 0, Score = 0.0
+Segment (49, 29, 132, 50): Best match = У, Score = 0.01841830089688301
+Segment (50, 77, 2, 1): Best match = 0, Score = 0.0
+Segment (64, 78, 1, 1): Best match = 0, Score = 0.0
+Segment (90, 78, 3, 1): Best match = 0, Score = 0.0
+Segment (101, 78, 12, 3): Best match = Р, Score = 0.12851303815841675
+Segment (109, 26, 1, 1): Best match = 0, Score = 0.0
+Segment (116, 26, 1, 1): Best match = 0, Score = 0.0
+Segment (123, 79, 27, 4): Best match = Р, Score = 0.3006317913532257
+Segment (152, 81, 48, 3): Best match = 9, Score = 0.2616671621799469
+Segment (154, 65, 8, 4): Best match = Т, Score = 0.22110198438167572
+Segment (165, 35, 116, 47): Best match = Т, Score = 0.07545063644647598
+Segment (170, 24, 1, 1): Best match = 0, Score = 0.0
+Segment (181, 26, 13, 13): Best match = Р, Score = 0.3125816285610199
+Segment (229, 36, 52, 37): Best match = С, Score = -0.011603143997490406
+Segment (234, 61, 2, 2): Best match = Р, Score = 0.008971725590527058
+Segment (237, 64, 5, 2): Best match = В, Score = 0.27313512563705444
+Segment (243, 89, 1, 1): Best match = 0, Score = 0.0
+Segment (260, 54, 3, 3): Best match = Т, Score = -0.07627157121896744
+Segment (260, 50, 3, 2): Best match = М, Score = 0.24022726714611053
+Segment (262, 43, 1, 1): Best match = 0, Score = 0.0
+Файл: Х147МК98.jpg
+Распознанный текст: 20Н0УР00Р9
+Ожидаемый текст: Х147МК98
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.7410 секунд
+Время предобработки: 0.0349 секунд
+Время постобработки: 0.0000 секунд
+
+Segment (0, 0, 138, 46): Best match = Р, Score = 0.20496971905231476
+Segment (0, 0, 119, 9): Best match = Т, Score = 0.0825904831290245
+Segment (5, 42, 9, 4): Best match = Х, Score = 0.31737110018730164
+Segment (17, 39, 6, 7): Best match = В, Score = 0.3373776972293854
+Segment (53, 42, 3, 4): Best match = М, Score = 0.28418993949890137
+Segment (78, 43, 2, 3): Best match = Т, Score = 0.009526418522000313
+Segment (89, 39, 13, 1): Best match = 0, Score = 0.0
+Segment (128, 44, 2, 1): Best match = 0, Score = 0.0
+Файл: Ц5300ХА.jpg
+Распознанный текст: РТХВМТ00
+Ожидаемый текст: Ц5300ХА
+Точность распознавания: 0.00%
+Полное совпадение: Нет
+Время нахождения пластины: 0.1336 секунд
+Время предобработки: 0.0070 секунд
+Время постобработки: 0.0000 секунд
+
+Общая точность распознавания: 4.34%
+Количество полных совпадений: 0 из 55
+>>> 
