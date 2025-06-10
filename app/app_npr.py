@@ -840,3 +840,30 @@ def main():
             "Порог уверенности (CNN), ниже — символ '?'",
             0.0, 1.0, 0.5, 0.05
         )
+     analyze_button = st.button("Анализировать")
+
+        st.write("---")
+        st.header("2) Импорт результатов (JSON/XML)")
+        imported_json_file = st.file_uploader("Импорт JSON", type=["json"])
+        imported_xml_file = st.file_uploader("Импорт XML", type=["xml"])
+        import_button = st.button("Загрузить результаты из файла")
+
+    # ‑‑‑ Основной экран: предпросмотр
+    if uploaded_file:
+        pil_img_raw = Image.open(uploaded_file)
+        w_percent = 400.0 / pil_img_raw.width
+        pil_img_resized = pil_img_raw.resize((400, int(pil_img_raw.height * w_percent)), Image.Resampling.LANCZOS)
+        st.image(pil_img_resized, caption="Загруженное изображение (уменьшено)")
+
+    # ‑‑‑ Импорт JSON/XML
+    if import_button:
+        if imported_json_file:
+            plate_i, brand_i, type_i, color_i = parse_json(imported_json_file.read().decode())
+            st.success("Данные из JSON загружены:")
+            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
+        elif imported_xml_file:
+            plate_i, brand_i, type_i, color_i = parse_xml(imported_xml_file.read().decode())
+            st.success("Данные из XML загружены:")
+            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
+        else:
+            st.warning("Не выбран файл для импорта.")
