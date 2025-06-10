@@ -1,0 +1,16 @@
+2025-06-10 18:56:02 [WARNING] YOLOv8 weights not found – fallback to Haar cascade.
+2025-06-10 18:56:02 [WARNING] Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-10 18:56:02 [INFO] CNN model loaded successfully.
+2025-06-10 18:56:05 [WARNING] From C:\Users\user\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2025-06-10 18:56:36 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:58:14 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:58:28 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:58:45 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:58:59 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:59:04 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:59:32 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 18:59:38 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 19:00:01 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 19:00:03 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
+2025-06-10 19:00:06 [INFO] HTTP Request: POST https://api.proxyapi.ru/openai/v1/responses "HTTP/1.1 200 OK"
