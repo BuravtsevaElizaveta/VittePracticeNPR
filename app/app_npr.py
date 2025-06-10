@@ -74,23 +74,6 @@ warnings.filterwarnings(
 logging.getLogger('streamlit.runtime.scriptrunner_utils').setLevel(logging.ERROR)
 logging.getLogger('streamlit').setLevel(logging.ERROR)
 
-
-###############################################################################
-# ГЛОБАЛЬНАЯ СТАТИСТИКА
-###############################################################################
-
-def init_stats():
-    if 'stat_items' not in st.session_state:
-        st.session_state['stat_items'] = []
-
-
-def add_stat_item(plate_number: str, region: str, year: str):
-    st.session_state['stat_items'].append({
-        'plate_number': plate_number,
-        'region': region,
-        'year_issued': year
-    })
-
 ###############################################################################
 # ЛОГИРОВАНИЕ
 ###############################################################################
@@ -102,14 +85,11 @@ logging.basicConfig(
 )
 
 ###############################################################################
-# ЛОГИРОВАНИЕ
+# OPENAI (через Proxy)
 ###############################################################################
-logging.basicConfig(
-    filename='app.log',
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
+proxy_api_key = "sk-2uHtBOkjr3ZrCn43aUt4WdEZ20JaXu49"
+proxy_base_url = "https://api.proxyapi.ru/openai/v1"
+client = openai.OpenAI(api_key=proxy_api_key, base_url=proxy_base_url)
 
 ###############################################################################
 # ФУНКЦИИ ДЛЯ GPT‑4o (через Proxy API)
@@ -452,181 +432,3 @@ def add_stat_item(plate_number: str, region: str, year: str):
         'region': region,
         'year_issued': year
     })
-
-###############################################################################
-# ОСНОВНОЕ ПРИЛОЖЕНИЕ
-###############################################################################
-
-def main():
-    init_stats()
-    st.set_page_config(page_title="AI Автоанализатор", layout="wide")
-    st.title("Автомобильный Анализатор (AI)")
-
-    # ‑‑‑ Сайдбар
-    with st.sidebar:
-        st.header("1) Загрузка и Настройки")
-        uploaded_file = st.file_uploader("Выберите изображение автомобиля", type=["jpg", "jpeg", "png"])
-
-        number_format = st.selectbox(
-            "Формат номера:",
-            ['Старые РФ номера', 'Новые РФ номера', 'Зарубежные номера', 'Европейские номера',
-             'Австралийские номера', 'Американские номера'],
-            index=1
-        )
-
-        detection_method = st.selectbox(
-            "Метод детекции номера:",
-            ['YOLOv8', 'Haar Cascade (legacy)'],
-            index=0 if yolo_model else 1,
-            help="YOLOv8 быстрее и надёжнее, но требует модель YOLOv8.pt"
-        )
-
-        task = st.radio(
-            "Выберите задачу:",
-            ['Распознать номер', 'Определить марку', 'Определить тип автомобиля', 'Определить цвет', 'Всё сразу']
-        )
-
-        confidence_threshold = st.slider(
-            "Порог уверенности (CNN), ниже — символ '?'",
-            0.0, 1.0, 0.5, 0.05
-        )
-
-        analyze_button = st.button("Анализировать")
-
-        st.write("---")
-        st.header("2) Импорт результатов (JSON/XML)")
-        imported_json_file = st.file_uploader("Импорт JSON", type=["json"])
-        imported_xml_file = st.file_uploader("Импорт XML", type=["xml"])
-        import_button = st.button("Загрузить результаты из файла")
-
-    # ‑‑‑ Основной экран: предпросмотр
-    if uploaded_file:
-        pil_img_raw = Image.open(uploaded_file)
-        w_percent = 400.0 / pil_img_raw.width
-        pil_img_resized = pil_img_raw.resize((400, int(pil_img_raw.height * w_percent)), Image.Resampling.LANCZOS)
-        st.image(pil_img_resized, caption="Загруженное изображение (уменьшено)")
-
-    # ‑‑‑ Импорт JSON/XML
-    if import_button:
-        if imported_json_file:
-            plate_i, brand_i, type_i, color_i = parse_json(imported_json_file.read().decode())
-            st.success("Данные из JSON загружены:")
-            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
-        elif imported_xml_file:
-            plate_i, brand_i, type_i, color_i = parse_xml(imported_xml_file.read().decode())
-            st.success("Данные из XML загружены:")
-            st.write(f"Номер: {plate_i}, Марка: {brand_i}, Тип: {type_i}, Цвет: {color_i}")
-        else:
-            st.warning("Не выбран файл для импорта.")
-
-    # ‑‑‑ Анализ изображения
-    if analyze_button and uploaded_file:
-        start_time = time.time()
-        progress = st.progress(0)
-
-        pil_img = Image.open(uploaded_file)
-        img_bgr = np.array(pil_img.convert("RGB"))[:, :, ::-1]
-
-        plate_number = brand = car_type = color = None
-        confs: List[float] = []
-
-        # Обработка «Всё сразу»
-        if task == 'Всё сразу':
-            plate_img, plate_part = plate_detect(img_bgr, method=detection_method)
-            st.subheader("Распознавание номера…")
-            st.image(plate_img, caption="Обнаруженный номер", width=300)
-            plate_number, confs = recognize_number_cnn(plate_part, model_cnn, confidence_threshold)
-            if number_format == 'Новые РФ номера' and plate_number:
-                plate_number, confs = fix_number_format_new_rus(plate_number, confs)
-            progress.progress(20)
-
-            # Параллельные GPT‑задачи
-            with concurrent.futures.ThreadPoolExecutor() as ex:
-                f_brand = ex.submit(recognize_brand_gpt4, img_bgr)
-                f_color = ex.submit(recognize_color_gpt4, img_bgr)
-                f_type = ex.submit(classify_car_type, img_bgr)
-                brand, color, car_type = f_brand.result(), f_color.result(), f_type.result()
-            progress.progress(90)
-
-        else:
-            # Разбор по отдельным задачам
-            if task == 'Распознать номер':
-                st.subheader("Распознавание номера…")
-                plate_img, plate_part = plate_detect(img_bgr, method=detection_method)
-                st.image(plate_img, caption="Обнаруженный номер", width=300)
-                plate_number, confs = recognize_number_cnn(plate_part, model_cnn, confidence_threshold)
-                if number_format == 'Новые РФ номера' and plate_number:
-                    plate_number, confs = fix_number_format_new_rus(plate_number, confs)
-                progress.progress(50)
-            if task == 'Определить марку':
-                st.subheader("Определение марки…")
-                brand = recognize_brand_gpt4(img_bgr)
-                progress.progress(50)
-            if task == 'Определить тип автомобиля':
-                st.subheader("Определение типа…")
-                car_type = classify_car_type(img_bgr)
-                progress.progress(50)
-            if task == 'Определить цвет':
-                st.subheader("Определение цвета…")
-                color = recognize_color_gpt4(img_bgr)
-                progress.progress(50)
-
-        # Доп. анализ (регион, год)
-        region_name = year_issued = ""
-        if plate_number and number_format in ['Старые РФ номера', 'Новые РФ номера']:
-            st.subheader("Дополнительный анализ номера (регион, год выдачи)…")
-            region_name, year_issued = analyze_russian_number_gpt(plate_number)
-        progress.progress(100)
-
-        st.success(f"Обработка завершена за {time.time() - start_time:.2f} сек.")
-
-        # ‑‑‑ Итог
-        st.header("Результаты анализа")
-        if plate_number:
-            st.write(f"**Номер**: {plate_number}")
-            if region_name:
-                st.write(f"**Регион**: {region_name}")
-            if year_issued:
-                st.write(f"**Год выдачи**: {year_issued}")
-            add_stat_item(plate_number, region_name, year_issued)
-            if confs:
-                avg_conf = sum(confs) / len(confs)
-                st.write(f"Средняя уверенность (CNN): {avg_conf:.2f}")
-                if len(plate_number) == len(confs):
-                    st.bar_chart(pd.DataFrame({"Символ": list(plate_number), "Уверенность": confs}), x="Символ", y="Уверенность")
-                else:
-                    st.warning("Длина номера не совпадает с количеством конфиденсов – проверьте сегментацию.")
-        if brand:
-            st.write(f"**Марка**: {brand}")
-        if car_type:
-            st.write(f"**Тип**: {car_type}")
-        if color:
-            st.write(f"**Цвет**: {color}")
-
-        # ‑‑‑ Экспорт
-        st.subheader("Выгрузить результат в JSON/XML")
-        res_json = generate_json_result(plate_number, brand, car_type, color)
-        st.download_button("Скачать JSON", res_json.encode(), file_name="result.json", mime="application/json")
-        res_xml = generate_xml_result(plate_number, brand, car_type, color)
-        st.download_button("Скачать XML", res_xml.encode(), file_name="result.xml", mime="application/xml")
-
-    elif analyze_button and not uploaded_file:
-        st.warning("Сначала загрузите изображение.")
-
-    # ‑‑‑ Статистика
-    st.write("---")
-    st.header("Статистика распознанных номеров (РФ)")
-    if st.session_state['stat_items']:
-        st.dataframe(pd.DataFrame(st.session_state['stat_items']))
-    else:
-        st.write("Пока нет записей в статистике.")
-
-###############################################################################
-# Точка входа
-###############################################################################
-if __name__ == '__main__':
-    if runtime.exists():
-        main()
-    else:
-        sys.argv = ["streamlit", "run", sys.argv[0]]
-        sys.exit(stcli.main())
